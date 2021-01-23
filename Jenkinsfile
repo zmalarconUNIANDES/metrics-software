@@ -3,7 +3,7 @@ pipeline {
    environment {
       GIT_REPO = '202110_Equipo1'
       GIT_CREDENTIAL_ID = '67fc884e-63ed-47cc-8a49-e91b798c7178'
-      SONARQUBE_URL = 'http://172.24.101.209:8082/sonar-isis2603'
+      SONARQUBE_URL = 'http://172.24.100.52:8082/sonar-misovirtual'
    }
    stages {
       stage('Checkout') {
