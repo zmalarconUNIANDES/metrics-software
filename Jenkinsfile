@@ -32,7 +32,7 @@ pipeline {
      stage('Test') {
             steps {
                 script {
-                    docker.image('alpine-chrome').inside {
+                    docker.image('zenika/alpine-chrome').inside {
                         
                     }
                 }
