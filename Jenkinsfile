@@ -29,16 +29,6 @@ pipeline {
             }
          }
       }
-     stage('Test') {
-            steps {
-                script {
-                    docker.image('zenika/alpine-chrome').inside('--entrypoint=""') {
-                      sh 'ng test --watch=false --code-coverage'
-                      sh 'npm run sonar'
-                    }
-                }
-            }
-        }
       stage('Static Analysis') {
          // Run static analysis
          steps {
