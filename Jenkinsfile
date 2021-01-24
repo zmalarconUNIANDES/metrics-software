@@ -33,7 +33,8 @@ pipeline {
             steps {
                 script {
                     docker.image('zenika/alpine-chrome').inside {
-                        
+                      ng test --watch=false --code-coverage
+                      npm run sonar
                     }
                 }
             }
