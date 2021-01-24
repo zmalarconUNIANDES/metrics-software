@@ -29,6 +29,15 @@ pipeline {
             }
          }
       }
+     stage('Test') {
+            steps {
+                script {
+                    docker.image('alpine-chrome').inside {
+                        
+                    }
+                }
+            }
+        }
       stage('Static Analysis') {
          // Run static analysis
          steps {
