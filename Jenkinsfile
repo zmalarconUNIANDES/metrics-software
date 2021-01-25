@@ -29,6 +29,17 @@ pipeline {
             }
          }
       }
+     stage('Test') {
+         steps {
+            script {
+               docker.image('citools-isis2603:latest').inside('-u root') {
+                  sh '''
+                     ng build --watch=false
+                  '''
+               }
+            }
+         }
+      }
       stage('Static Analysis') {
          // Run static analysis
          steps {
