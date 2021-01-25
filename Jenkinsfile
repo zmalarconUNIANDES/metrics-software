@@ -29,18 +29,6 @@ pipeline {
             }
          }
       }
-     stage('Test') {
-         // Build app
-         steps {
-            script {
-               docker.image('citools-isis2603:latest').inside('-u root') {
-                  sh '''
-                     which chromium-browser
-                  '''
-               }
-            }
-         }
-      }
       stage('Static Analysis') {
          // Run static analysis
          steps {
