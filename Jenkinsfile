@@ -34,7 +34,7 @@ pipeline {
             script {
                docker.image('citools-isis2603:latest').inside('-u root') {
                   sh '''
-                     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list
+                     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee -a /etc/apt/sources.list
                       wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
                       apt-get update
                       apt-get install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
