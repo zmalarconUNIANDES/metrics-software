@@ -34,8 +34,14 @@ pipeline {
             script {
                docker.image('citools-isis2603:latest').inside('-u root') {
                   sh '''
-                     apt-get update
-                     apt-get install -y libgbm-dev
+                     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list
+                      wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+                      apt-get update
+                      apt-get install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
+                      apt-get install google-chrome-stable
+                      apt-get install xvfb gtk2-engines-pixbuf
+                      apt-get install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+                      apt-get install imagemagick x11-apps
                      ng test --watch=false --code-coverage true
                   '''
                }
