@@ -34,6 +34,7 @@ pipeline {
             script {
                docker.image('citools-isis2603:latest').inside('-u root') {
                   sh '''
+                     apt-get update
                      apt-get install -y libgbm-dev
                      ng test --watch=false --code-coverage true
                   '''
