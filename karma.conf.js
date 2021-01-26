@@ -10,6 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),  
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-sonarqube-unit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -20,7 +21,15 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml'],
+    sonarQubeUnitReporter: {
+          sonarQubeVersion: 'LATEST',
+          outputFile: 'reports/ut_report.xml',
+          overrideTestDescription: true,
+          testPaths: ['./src'],
+          testFilePattern: '.spec.ts',
+          useBrowserName: false
+     },	 
+    reporters: ['progress', 'kjhtml', 'sonarqubeUnit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
