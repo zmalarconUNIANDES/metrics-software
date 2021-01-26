@@ -42,7 +42,8 @@ pipeline {
                       apt-get install -y xvfb gtk2-engines-pixbuf
                       apt-get install -y xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
                       apt-get install -y imagemagick x11-apps
-                     ng test --watch=false --code-coverage true
+                      ng test --watch=false --code-coverage true
+                      npm run sonar
                   '''
                }
             }
