@@ -2,7 +2,7 @@ pipeline {
    agent any
    environment {
       GIT_REPO = '202110_S4_E4_ComputadoresPorPartes_Front'
-      GIT_CREDENTIAL_ID = '67fc884e-63ed-47cc-8a49-e91b798c7178'
+      GIT_CREDENTIAL_ID = '692cb316-0794-4522-9cf0-83c2618a09e5'
       SONARQUBE_URL = 'http://172.24.101.209:8082/sonar-isis2603'
    }
    stages {
