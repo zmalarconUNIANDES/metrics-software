@@ -1,5 +1,5 @@
 # Enlaces
-- [Jenkins](http://157.253.238.75:8080/jenkins-misovirtual/view/MISW-4104/)
-- [Sonar](http://157.253.238.75:8080/sonar-misovirtual/)
-- [GitInspector](https://misw-4104-web.github.io/202110_Equipo1/reports)
 
+- [Jenkins](http://157.253.238.75:8080/jenkins-isis2603/)
+- [Sonar](http://157.253.238.75:8080/sonar-isis2603/)
+- [GitInspector](https://Uniandes-isis2603.github.io/202110_S1_E1_Patrociname_Front/reports/)
