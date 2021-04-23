@@ -18,6 +18,13 @@ const routes: Routes = [
           import('../album/album.module').then((m) => m.AlbumModule)
       },
       {
+        path: 'collectors',
+        loadChildren: () =>
+          import('../collectors/collectors.module').then(
+            (m) => m.CollectorsModule
+          )
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
