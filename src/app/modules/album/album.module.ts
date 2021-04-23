@@ -16,9 +16,6 @@ const AlbumRouting: Routes = [
 
 @NgModule({
   declarations: [AlbumListComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AlbumRouting)
-  ]
+  imports: [CommonModule, RouterModule.forChild(AlbumRouting)]
 })
-export class AlbumModule { }
+export class AlbumModule {}
