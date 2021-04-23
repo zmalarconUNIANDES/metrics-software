@@ -13,7 +13,7 @@ const routes: Routes = [
           import('../home/home.module').then((m) => m.HomeModule)
       },
       {
-        path: 'album',
+        path: 'albums',
         loadChildren: () =>
           import('../album/album.module').then((m) => m.AlbumModule)
       },
