@@ -1,34 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ContentComponent } from './layout/components/content/content.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: ContentComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'album',
-        pathMatch: 'full',
-      },
-      {
-        path: 'album',
-        loadChildren: () => import('./modules/album/album.module').then(m => m.AlbumModule)
-      },
-      {
-          path: '**',
-          redirectTo: 'album',
-          pathMatch: 'full',
-      }
-    ]
+    loadChildren: () =>
+      import('./modules/layout/layout.module').then((m) => m.LayoutModule)
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

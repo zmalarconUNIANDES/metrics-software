@@ -12,5 +12,10 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "paths": {
+    "@app/*": ["src/app/*"],
+    "@environment": ["src/environments/environment.ts"],
+    "@modules/*": ["src/app/modules/*"],
+  }
 }
