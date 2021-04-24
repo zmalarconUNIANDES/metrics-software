@@ -83,4 +83,17 @@ describe('AlbumService', () => {
     req.flush(mockAlbum);
     expect(req.request.method).toBe('GET');
   });
+
+  it('should provide getAlbumById', () => {
+    const id = '100';
+    const url = urlBuilder.services(ENV.api.services.albums);
+    // tslint:disable-next-line: deprecation
+    service.getAlbumById(id).subscribe((album: Album) => {
+      expect(album).not.toBe(null);
+    });
+    const req = httpMock.expectOne(url);
+
+    req.flush(mockAlbum);
+    expect(req.request.method).toBe('GET');
+  });
 });
