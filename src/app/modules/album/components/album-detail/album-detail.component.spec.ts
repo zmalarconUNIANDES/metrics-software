@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { AlbumDetailComponent } from './album-detail.component';
 
@@ -22,6 +23,14 @@ describe('AlbumDetailComponent', () => {
         {
           provide: AlbumService,
           useValue: albumServiceSpy
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              params: { id: 100 }
+            }
+          }
         }
       ]
     }).compileComponents();

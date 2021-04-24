@@ -1,7 +1,45 @@
 <div class="container py-5">
     <div class="row">
         <div class="w-100"><h3>Albums</h3></div>
-        <div class="w-100">No hay dDetalle para ese Album</div>
-        <div></div>
+        <div class="w-100" *ngIf="!album">No hay Detalle para este Album</div>
+        
+        <div class="profile-head" *ngIf="album">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <img [src]="album.cover" class="img-responsive" />
+                </div>
+                <div class="col-md-9 col-xs-12">
+                    <div class="col-sm-12"><p>{{ album.releaseDate | date:'yyyy' }}</p></div>
+                    <div class="col-sm-12"><h5>{{ album.name }}</h5></div>
+                    <div class="col-sm-12"><p *ngFor="let musician of album.performers"><i>{{ musician.name }}</i></p></div>
+                    <div class="col-sm-12"><p>{{ album.description }}</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-grad-mask"></div>
+
+        <div class="w-100" *ngIf="album">
+            <div class="w-100"><h5>Canciones</h5></div>
+            <div class="forum-item active card m-2 p-2 w-100" *ngFor="let track of album.tracks">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="forum-icon">
+                            <i class="fa fa-play"></i>
+                        </div>
+                        <a href="#" class="forum-item-title">{{track.name}}</a>
+                        <div class="forum-sub-title"></div>
+                    </div>
+                    <div class="col-md-2 forum-info">
+                        <span class="views-number">
+                            {{track.duration}}
+                        </span>
+                        <div>
+                            <small>Duración</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

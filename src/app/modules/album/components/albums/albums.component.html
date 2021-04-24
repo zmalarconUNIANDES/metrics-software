@@ -2,21 +2,19 @@
     <div class="row">
         <div class="w-100"><h3>Albums</h3></div>
         <div class="w-100" *ngIf="albums.length === 0">No hay colecciones de albums</div>
-        <div *ngIf="albums.length > 0">
-            <div *ngFor="let album of albums" class="col col-sm-12 col-md-6 col-lg-3">
-                <div class="widget single-news">
-                    <div class="image">
-                        <img [src]="album.cover" class="img-responsive" alt="{{ album.name }}">
-                        <span class="gradient"></span>
-                    </div>
-                    <div class="details">
-                        <ul class="list-inline social-lists animate">
-                            <li><a href="#"><i class="fa fa-play"></i></a></li>
-                        </ul>
-                        <div class="category"><a [routerLink]="['/albums/detail', album.id]">{{ album.recordLabel }} </a></div>
-                        <h3><a [routerLink]="['/albums/detail', album.id]">{{ album.name }}</a></h3>
-                        <time>{{ album.genre }}</time>
-                    </div>
+        <div *ngFor="let album of albums" class="col col-sm-12 col-md-6 col-lg-3">
+            <div class="widget single-news">
+                <div class="image">
+                    <img [src]="album.cover" class="img-responsive" alt="{{ album.name }}">
+                    <span class="gradient"></span>
+                </div>
+                <div class="details">
+                    <ul class="list-inline social-lists animate">
+                        <li><a href="#"><i class="fa fa-play"></i></a></li>
+                    </ul>
+                    <div class="category"><a [routerLink]="['/albums/detail', album.id]">{{ album.recordLabel }} </a></div>
+                    <h3><a [routerLink]="['/albums/detail', album.id]">{{ album.name }}</a></h3>
+                    <time>{{ album.genre }}</time>
                 </div>
             </div>
         </div>

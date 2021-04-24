@@ -86,7 +86,7 @@ describe('AlbumService', () => {
 
   it('should provide getAlbumById', () => {
     const id = '100';
-    const url = urlBuilder.services(ENV.api.services.albums);
+    const url = urlBuilder.services(ENV.api.services.albums + `/${id}`);
     // tslint:disable-next-line: deprecation
     service.getAlbumById(id).subscribe((album: Album) => {
       expect(album).not.toBe(null);
