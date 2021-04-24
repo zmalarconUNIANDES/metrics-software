@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { urlBuilder } from '@app/commons/utils/url-builder';
+import { environment as ENV } from '@environment';
+
+import { Album } from '@modules/album/album.interface';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AlbumService {
+  constructor(private http: HttpClient) {}
+
+  getAlbums(): Observable<Album[]> {
+    const url = urlBuilder.services(ENV.api.services.albums);
+    return this.http.get<Album[]>(url);
+  }
+
+  getAlbumById(id: string): Observable<Album> {
+    const url = urlBuilder.services(`${ENV.api.services.albums}/${id}`);
+    return this.http.get<Album>(url);
+  }
+}
