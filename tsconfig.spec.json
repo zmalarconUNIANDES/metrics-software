@@ -20,5 +20,6 @@
     "@app/*": ["src/app/*"],
     "@environment": ["src/environments/environment.ts"],
     "@modules/*": ["src/app/modules/*"],
+    "@testing/*": ["test-helpers/*"]
   }
 }

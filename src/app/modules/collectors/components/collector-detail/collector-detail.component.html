@@ -1,10 +1,55 @@
 <div class="container py-5">
-  <h1>Colecciones</h1>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{ collector.name }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ collector.email }}</h6>
-      <h6 class="card-subtitle mb-2">{{ collector.telephone }}</h6>
+  <ng-container *ngTemplateOutlet="collector ? (collector?.name ? content : empty) : working"></ng-container>
+</div>
+
+<ng-template #working>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
   </div>
-</div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="d-flex justify-content-center">
+    No pudimos cargar la información del coleccionista
+  </div>
+</ng-template>
+
+<ng-template #content>
+  <div>
+    <h2 class="card-title">{{ collector.name }}</h2>
+    <h5 class="card-subtitle mb-2 text-muted">{{ collector.email }}</h5>
+    <h5 class="card-subtitle mb-2">{{ collector.telephone }}</h5>
+  </div>
+
+  <section>
+    <h3 class="mt-5 mb-3">Comentarios</h3>
+    <div class="row">
+      <div *ngFor="let comment of collector.comments" class="col-sm-12 mb-2">
+        <div class="card">
+          <div class="card-body d-flex justify-content-between align-content-center">
+            <h5 class="card-title m-0">{{ comment.description }}</h5>
+            <h6 class="card-subtitle m-0 text-muted">{{ comment.rating }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="mt-5 mb-3">Artistas favoritos</h3>
+    <div class="row">
+      <div *ngFor="let performer of collector.favoritePerformers" class="col-sm-12 col-md-4 col-lg-3 mb-2">
+        <div class="card">
+          <img [src]="performer.image" class="card-img-top" alt="performer-image">
+          <div class="card-body">
+            <h5 class="card-title">{{ performer.name }}</h5>
+            <p class="card-text">{{ performer.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ (performer.birthDate || performer.creationDate) | date }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>
