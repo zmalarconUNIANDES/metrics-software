@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Artist } from '../entities/artist.interface';
 import { ArtistService } from '../service/artist.service';
 
@@ -9,16 +10,15 @@ import { ArtistService } from '../service/artist.service';
 })
 export class ArtistDetailsComponent implements OnInit {
 
-  public artist: Artist[];
-  constructor(private artistService: ArtistService) { }
+  public artist: Artist;
+  constructor( private service: ArtistService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.fetchArtist();
+    this.service
+      .getArtistById(this.route.snapshot.params.id)
+      .subscribe((artist: Artist) => (this.artist = artist));
   }
 
-  private fetchArtist(): void {
-    this.artistService.
-    fetchArtists()
-    .subscribe((artists: Artist[]) => (this.artist = artists));
-  }
+
 }
