@@ -8,6 +8,7 @@ export const environment = {
     server_url: 'https://backend-202112-21.herokuapp.com',
     services: {
       collectors: '/collectors',
+      artists: '/musicians',
       albums: '/albums'
     }
   }

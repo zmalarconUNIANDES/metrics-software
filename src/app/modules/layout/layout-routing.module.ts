@@ -25,6 +25,13 @@ const routes: Routes = [
           )
       },
       {
+        path: 'artists',
+        loadChildren: () =>
+          import('../artist/artist.module').then(
+            (m) => m.ArtistModule
+          )
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
