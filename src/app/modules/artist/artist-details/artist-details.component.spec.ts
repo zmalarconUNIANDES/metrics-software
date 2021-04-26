@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ArtistServiceMock } from '@testing/mocks/services/artist.service.mock';
+import { TestingModule } from '@testing/testing.module';
+import { ArtistService } from '../service/artist.service';
 
 import { ArtistDetailsComponent } from './artist-details.component';
 
@@ -8,9 +12,15 @@ describe('ArtistDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtistDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [ ArtistDetailsComponent ],
+      imports: [TestingModule, RouterTestingModule.withRoutes([])],
+      providers: [
+        {
+          provide: ArtistService,
+          useClass: ArtistServiceMock
+        }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
