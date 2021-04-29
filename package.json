@@ -59,6 +59,9 @@
     "pretty-quick": "^3.1.0",
     "protractor": "~7.0.0",
     "sonar-scanner": "^3.1.0",
+    "stylelint": "^13.13.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-scss": "^3.19.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "tslint-clean-code": "^0.2.10",
@@ -68,7 +71,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run prettier && npm run lint:html",
+      "pre-commit": "npm run lint && npm run prettier && npm run lint:html && npm run lint:scss",
       "pre-push": "npm run test"
     }
   }
