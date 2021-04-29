@@ -27,3 +27,24 @@ body {
     text-decoration: none !important;
   }
 }
+
+.card {
+  &.hover {
+    transition: .3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+
+      .card-body {
+        transition: .2s;
+        background-color: $black;
+
+        .card-title {
+          transition: .3s;
+          color: $white;
+        }
+      }
+    }
+  }
+}

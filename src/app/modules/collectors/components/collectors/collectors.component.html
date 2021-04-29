@@ -21,7 +21,7 @@
   <div class="row">
     <div *ngFor="let collector of collectors; let i = index" class="col-sm-12 col-md-6 col-lg-3"
          [routerLink]="['/collectors', collector.id]">
-      <div class="card rounded">
+      <div class="card rounded hover">
         <img [src]="'https://picsum.photos/300/300.jpg?grayscale&ramdom=' + (i + 1)" alt="">
         <div class="card-body">
           <h6 class="card-title m-0">{{ collector.name }}</h6>
