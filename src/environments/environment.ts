@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  resources: {
+    base_img: './assets/images/'
+  },
   api: {
     server_url: 'https://backend-202112-21.herokuapp.com',
     services: {

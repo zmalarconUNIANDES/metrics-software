@@ -1,31 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-lite bg-lite">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" routerLink="/">
+      <img [src]="'logo.png' | imageUrl" height="35" class="d-inline-block align-top" alt="logos">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/albums" routerLinkActive="active" aria-current="page">Albumes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/artists" routerLinkActive="active" aria-current="page">Artistas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/collectors" routerLinkActive="active" aria-current="page">Coleccionistas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/awards" routerLinkActive="active" aria-current="page">Premios</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2 mr-3" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link semi-bold" routerLink="/home" routerLinkActive="active" aria-current="page">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link semi-bold" routerLink="/albums" routerLinkActive="active" aria-current="page">ALBUMES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link semi-bold" routerLink="/artists" routerLinkActive="active" aria-current="page">ARTISTAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link semi-bold" routerLink="/collectors" routerLinkActive="active" aria-current="page">COLECCIONISTAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link semi-bold" routerLink="/awards" routerLinkActive="active" aria-current="page">PREMIOS</a>
+          </li>
+        </ul>
+      </div>
     </div>
+    <button class="btn btn-primary d-none d-md-flex" type="submit"><i class="bi-search mr-3"></i>Buscar</button>
+
   </div>
 </nav>

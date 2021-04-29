@@ -5,7 +5,7 @@ import { ArtistService } from '../service/artist.service';
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
-  styleUrls: ['./artist-list.component.css']
+  styleUrls: ['./artist-list.component.scss']
 })
 export class ArtistListComponent implements OnInit {
   public artists: Artist[];

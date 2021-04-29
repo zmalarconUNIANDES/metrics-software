@@ -1,7 +1,10 @@
-<div class="container">
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded" *ngIf="artist">
+  <a class="custom-link d-inline-block" routerLink="/artists">
+    <h5 class="pb-3"><i class="bi-arrow-left pr-3"></i>Artistas</h5>
+  </a>
   <div class="row align-items-start h-50">
     <div class="col-3">
-      <img class="rounded float-start img-profile"src="{{ artist.image}}" alt="">
+      <img class="rounded float-start img-profile" src="{{ artist.image}}" alt="">
     </div>
     <div class="col-9">
       <h2>{{artist.name}}</h2>
@@ -9,31 +12,31 @@
       <h5 *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</h5>
     </div>
   </div>
-    <div class="row align-items-start h-50">
-      <div class="col-6 profile-footer">
-        <div class="row">
-          <h2>Albumes</h2>
-        </div>
-        <div class="row">
-          <div *ngFor="let album of artist.albums" class="col-sm"
-          [routerLink]="['/albums', album.id]">
-            <div class="card">
-              <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
-              <h4 class="card-text">{{ album.name }}</h4>
-            </div>
-          </div >
-        </div>
+  <div class="row align-items-start h-50">
+    <div class="col-6 profile-footer">
+      <div class="row">
+        <h2>Albumes</h2>
       </div>
-      <div class="col-5">
-        <div class="row"><h4>Top 5</h4></div>
-        <div *ngFor="let album of artist.albums" class="row"
-        [routerLink]="['/albums', album.id]">
+      <div class="row">
+        <div *ngFor="let album of artist?.albums" class="col-sm"
+             [routerLink]="['/albums', album.id]">
           <div class="card">
             <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
             <h4 class="card-text">{{ album.name }}</h4>
-            <p class="card-text">{{artist.name}}</p>
           </div>
-        </div >
+        </div>
       </div>
+    </div>
+    <div class="col-5">
+      <div class="row"><h4>Top 5</h4></div>
+      <div *ngFor="let album of artist.albums" class="row"
+           [routerLink]="['/albums', album.id]">
+        <div class="card">
+          <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
+          <h4 class="card-text">{{ album.name }}</h4>
+          <p class="card-text">{{artist.name}}</p>
+        </div>
       </div>
+    </div>
+  </div>
 </div>

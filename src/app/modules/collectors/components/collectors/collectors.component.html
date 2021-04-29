@@ -1,5 +1,5 @@
-<div class="container py-5">
-  <h1>Colecciones</h1>
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
+  <h3 class="pb-3">Coleccionistas</h3>
   <ng-container *ngTemplateOutlet="collectors ? (collectors.length > 0 ? content : empty) : working"></ng-container>
 </div>
 
@@ -19,13 +19,13 @@
 
 <ng-template #content>
   <div class="row">
-    <div *ngFor="let collector of collectors" class="col-sm-12 col-md-6 col-lg-3"
+    <div *ngFor="let collector of collectors; let i = index" class="col-sm-12 col-md-6 col-lg-3"
          [routerLink]="['/collectors', collector.id]">
-      <div class="card text-center">
+      <div class="card rounded">
+        <img [src]="'https://picsum.photos/300/300.jpg?grayscale&ramdom=' + (i + 1)" alt="">
         <div class="card-body">
-          <h5 class="card-title">{{ collector.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ collector.email }}</h6>
-          <h6 class="card-subtitle mb-2">{{ collector.telephone }}</h6>
+          <h6 class="card-title m-0">{{ collector.name }}</h6>
+          <small class="card-subtitle mb-2 text-muted">{{ collector.email }}</small>
         </div>
       </div>
     </div>

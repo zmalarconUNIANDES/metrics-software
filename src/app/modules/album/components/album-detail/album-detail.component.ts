@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-album-detail',
   templateUrl: './album-detail.component.html',
-  styleUrls: ['./album-detail.component.css']
+  styleUrls: ['./album-detail.component.scss']
 })
 export class AlbumDetailComponent implements OnInit, OnDestroy {
   subscription: Subscription;

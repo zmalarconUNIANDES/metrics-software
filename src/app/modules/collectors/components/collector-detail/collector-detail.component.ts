@@ -6,7 +6,7 @@ import { Collector } from '@modules/collectors/entities/colllector.interface';
 @Component({
   selector: 'app-collector-detail',
   templateUrl: './collector-detail.component.html',
-  styleUrls: ['./collector-detail.component.css']
+  styleUrls: ['./collector-detail.component.scss']
 })
 export class CollectorDetailComponent implements OnInit {
   public collector: Collector;
