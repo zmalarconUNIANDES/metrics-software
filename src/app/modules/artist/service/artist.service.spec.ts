@@ -1,4 +1,7 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { urlBuilder } from '@app/commons/utils/url-builder';
 
@@ -6,7 +9,6 @@ import { ArtistService } from './artist.service';
 import { environment as ENV } from '@environment';
 
 describe('ArtistService', () => {
-  let service: ArtistService;
   const setup = (): {
     service: ArtistService;
     httpTestingController: HttpTestingController;
@@ -16,11 +18,11 @@ describe('ArtistService', () => {
     return { service, httpTestingController };
   };
   beforeEach(() =>
-  TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule],
-    providers: [ArtistService]
-  })
-);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ArtistService]
+    })
+  );
 
   it('should be created', () => {
     const service: ArtistService = TestBed.inject(ArtistService);

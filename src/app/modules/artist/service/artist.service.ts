@@ -9,15 +9,14 @@ import { environment as ENV } from '@environment';
   providedIn: 'root'
 })
 export class ArtistService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public fetchArtists(): Observable<Artist[]> {
     const url = urlBuilder.services(ENV.api.services.artists);
     return this.http.get<Artist[]>(url);
   }
 
-  public getArtistById(id:string): Observable<Artist> {
+  public getArtistById(id: string): Observable<Artist> {
     const url = urlBuilder.services(`${ENV.api.services.artists}/${id}`);
     return this.http.get<Artist>(url);
   }

@@ -5,13 +5,9 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
 import { ArtistRoutingModule } from './artist-routing-module';
 import { ArtistService } from './service/artist.service';
 
-
 @NgModule({
   declarations: [ArtistListComponent, ArtistDetailsComponent],
-  imports: [
-    CommonModule,
-    ArtistRoutingModule
-  ],
+  imports: [CommonModule, ArtistRoutingModule],
   providers: [ArtistService]
 })
-export class ArtistModule { }
+export class ArtistModule {}

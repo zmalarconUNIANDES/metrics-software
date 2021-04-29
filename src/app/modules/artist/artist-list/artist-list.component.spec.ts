@@ -12,7 +12,7 @@ describe('ArtistListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtistListComponent ],
+      declarations: [ArtistListComponent],
       imports: [TestingModule, RouterTestingModule.withRoutes([])],
       providers: [
         {

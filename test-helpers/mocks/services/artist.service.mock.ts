@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ArtistFactory } from '../../factories/artist.factory';
-import { Artist } from '../../../src/app/modules/artist/entities/artist.interface'
+import { Artist } from '../../../src/app/modules/artist/entities/artist.interface';
 const artists: Artist[] = new ArtistFactory().createBulk(4);
 
 @Injectable()

@@ -4,7 +4,7 @@ import {
   Album,
   Artist,
   Prizes
-} from '../../src/app/modules/artist/entities/artist.interface'
+} from '../../src/app/modules/artist/entities/artist.interface';
 
 export class ArtistFactory extends AbstractFactory {
   public create(): Artist {
@@ -26,7 +26,7 @@ export class ArtistFactory extends AbstractFactory {
       cover: faker.lorem.word(),
       genre: faker.lorem.word(),
       recordLabel: faker.lorem.word(),
-      releaseDate: faker.date.past(),
+      releaseDate: faker.date.past()
     };
   }
   public createPrize(): Prizes {

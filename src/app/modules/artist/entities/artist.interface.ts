@@ -5,7 +5,6 @@ export interface Artist {
   description: string;
   albums: Album[];
   performerPrizes: Prizes[];
-
 }
 export interface Album {
   id: number;
