@@ -1,7 +1,8 @@
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
   <div class="row">
-        <div class="w-100"><h3 class="mb-4"><i class="bi-arrow-left pr-3" routerLink="/albums"></i> Albums</h3></div>
-        <div class="w-100" *ngIf="!album">No hay Detalle para este Album</div>
+        <div class="w-100">
+            <h4 class="mb-4"><i class="bi-arrow-left pr-3" routerLink="/albums"></i> Detalle del álbum: {{ album.name }}</h4></div>
+        <div class="w-100" *ngIf="!album">No hay detalle para este álbum</div>
 
         <div class="profile-head" *ngIf="album">
             <div class="row">
@@ -19,23 +20,32 @@
 
         <div class="divider-grad-mask"></div>
 
-        <div class="w-100" *ngIf="album">
-            <div class="w-100"><h5>Canciones</h5></div>
-            <div class="forum-item active card m-2 p-2 w-100" *ngFor="let track of album.tracks">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="forum-icon">
-                            <i class="fa fa-play"></i>
+        <div class="w-100 card" *ngIf="album">
+            <div class="w-100 head-collapse card-header" data-toggle="collapse" data-target="#collapseTraks" daria-expanded="true" aria-controls="collapseTraks"><h5>Ver listado de canciones</h5></div>
+            <div class="collapse" id="collapseTraks">
+                <div class="forum-item active card p-2 w-100">
+                    <div class="row" *ngIf="album.tracks && album.tracks.length === 0">
+                        <div class="col-12">
+                            No existen canciones para esté álbum
                         </div>
-                        <a href="#" class="forum-item-title">{{track.name}}</a>
-                        <div class="forum-sub-title"></div>
                     </div>
-                    <div class="col-md-2 forum-info">
-                        <span class="views-number">
-                            {{track.duration}}
-                        </span>
-                        <div>
-                            <small>Duración</small>
+                </div>
+                <div class="forum-item active card p-2 w-100" *ngFor="let track of album.tracks">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="forum-icon">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <a href="#" class="forum-item-title">{{track.name}}</a>
+                            <div class="forum-sub-title"></div>
+                        </div>
+                        <div class="col-md-2 forum-info">
+                            <span class="views-number">
+                                {{track.duration}}
+                            </span>
+                            <div>
+                                <small>Duración</small>
+                            </div>
                         </div>
                     </div>
                 </div>
