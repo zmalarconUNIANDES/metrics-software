@@ -127,6 +127,10 @@ a.forum-item-title:hover {
     color: #1ab394;
 }
 
+.head-collapse {
+    cursor: pointer;
+}
+
 @media all and (max-width:430px) {
     .profile-head ul li {
         font-size: 12px !important;
