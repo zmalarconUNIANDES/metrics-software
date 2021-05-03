@@ -4,7 +4,7 @@
   </a>
   <div class="row align-items-start h-50">
     <div class="col-3">
-      <img class="rounded float-start img-profile" src="{{ artist.image}}" alt="">
+      <img class="img-fluid rounded"src="{{ artist.image}}" alt="">
     </div>
     <div class="col-9">
       <h2>{{artist.name}}</h2>
@@ -12,13 +12,14 @@
       <h5 *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</h5>
     </div>
   </div>
-  <div class="row align-items-start h-50">
-    <div class="col-6 profile-footer">
+  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapseTraks"><h5>Ver Información Musical</h5></div>
+  <div class="row align-items-start h-50 collapse" id="collapse-music-info">
+      <div class="col-8">
       <div class="row">
-        <h2>Albumes</h2>
+          <h2 class="pl-3">Albumes</h2>
       </div>
       <div class="row">
-        <div *ngFor="let album of artist?.albums" class="col-sm"
+          <div *ngFor="let album of artist.albums" class="col-sm-4"
              [routerLink]="['/albums', album.id]">
           <div class="card">
             <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
@@ -27,8 +28,8 @@
         </div>
       </div>
     </div>
-    <div class="col-5">
-      <div class="row"><h4>Top 5</h4></div>
+      <div class="col-4">
+        <div class="row"><h2>Top 5</h2></div>
       <div *ngFor="let album of artist.albums" class="row"
            [routerLink]="['/albums', album.id]">
         <div class="card">
