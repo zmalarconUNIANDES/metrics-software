@@ -16,7 +16,7 @@ describe('HomeComponent', () => {
   const artistServiceSpy = jasmine.createSpyObj('ArtistService', [
     'fetchArtists'
   ]);
-  const fetchArtists = albumServiceSpy.fetchArtists as jasmine.Spy;
+  const fetchArtists = artistServiceSpy.fetchArtists as jasmine.Spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
