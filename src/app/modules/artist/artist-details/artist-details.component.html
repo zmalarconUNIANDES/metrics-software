@@ -7,12 +7,12 @@
       <img class="img-fluid rounded"src="{{ artist.image}}" alt="">
     </div>
     <div class="col-9">
-      <h2>{{artist.name}}</h2>
+      <h1>{{artist.name}}</h1>
       <p>{{artist.description}}</p>
-      <h5 *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</h5>
+      <p class="font-weight-bold" *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</p>
     </div>
   </div>
-  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapseTraks"><h5>Ver Información Musical</h5></div>
+  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapse-music-info"><h2>Información Musical</h2></div>
   <div class="row align-items-start h-50 collapse" id="collapse-music-info">
       <div class="col-8">
       <div class="row">
