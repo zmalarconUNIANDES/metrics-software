@@ -126,7 +126,7 @@ describe('HomeComponent', () => {
       ])
     );
 
-    getAlbums.and.returnValue(
+    fetchArtists.and.returnValue(
       of([
         {
           id: 100,
