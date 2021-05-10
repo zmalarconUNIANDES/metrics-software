@@ -38,7 +38,7 @@ describe('CollectorService', () => {
     expect(req.request.method).toBe('GET');
   });
 
-  it('should to call fetch collectors', () => {
+  it('should to call get collector', () => {
     const { service, httpTestingController } = setup();
     const id = '123';
     const url = urlBuilder.services(`${ENV.api.services.collectors}/${id}`);

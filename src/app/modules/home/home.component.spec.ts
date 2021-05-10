@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 import { AlbumService } from '../album/services/album.service';
 import { ArtistService } from '../artist/service/artist.service';
 import { HomeComponent } from './home.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -31,7 +32,8 @@ describe('HomeComponent', () => {
           provide: ArtistService,
           useValue: artistServiceSpy
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
