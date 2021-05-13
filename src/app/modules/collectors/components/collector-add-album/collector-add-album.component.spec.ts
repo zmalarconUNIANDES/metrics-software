@@ -75,7 +75,7 @@ describe('CollectorAddAlbumComponent', () => {
     fixture = TestBed.createComponent(CollectorAddAlbumComponent);
     component = fixture.componentInstance;
 
-    addAlbum.and.returnValue(of());
+    addAlbum.and.returnValue(of({}));
     toastrSuccess.and.returnValue(() => {});
     toastrError.and.returnValue(() => {});
     getAlbums.and.returnValue(
