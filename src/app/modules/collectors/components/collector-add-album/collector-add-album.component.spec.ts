@@ -13,6 +13,7 @@ import { AlbumFactory } from '@testing/factories/album.factory';
 import { Album } from '@modules/album/album.interface';
 import { TestComponent } from '@testing/component/test.component';
 import { TestingModule } from '@testing/testing.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 const album: Album = new AlbumFactory().create();
 
@@ -67,7 +68,8 @@ describe('CollectorAddAlbumComponent', () => {
             }
           }
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

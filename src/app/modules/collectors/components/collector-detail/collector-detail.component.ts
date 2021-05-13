@@ -14,10 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-collector-detail',
   templateUrl: './collector-detail.component.html',
-  styleUrls: [
-    './collector-detail.component.scss',
-    '../../../album/components/albums/albums.component.scss'
-  ]
+  styleUrls: ['./collector-detail.component.scss']
 })
 export class CollectorDetailComponent implements OnInit, OnDestroy {
   public collector: Collector;

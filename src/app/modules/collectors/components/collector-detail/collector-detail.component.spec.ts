@@ -12,6 +12,7 @@ import { Album } from '@modules/album/album.interface';
 import { AlbumFactory } from '@testing/factories/album.factory';
 import { Artist } from '@modules/artist/entities/artist.interface';
 import { ArtistFactory } from '@testing/factories/artist.factory';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 const album: Album = new AlbumFactory().create();
 const albums: Album[] = new AlbumFactory().createBulk(4);
@@ -65,7 +66,8 @@ describe('CollectorDetailComponent', () => {
             }
           }
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

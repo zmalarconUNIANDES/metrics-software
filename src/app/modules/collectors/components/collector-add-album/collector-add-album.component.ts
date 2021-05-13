@@ -10,10 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-collector-add-album',
   templateUrl: './collector-add-album.component.html',
-  styleUrls: [
-    './collector-add-album.component.scss',
-    '../../../album/components/albums/albums.component.scss'
-  ]
+  styleUrls: ['./collector-add-album.component.scss']
 })
 export class CollectorAddAlbumComponent implements OnInit, OnDestroy {
   public albums: Album[];
