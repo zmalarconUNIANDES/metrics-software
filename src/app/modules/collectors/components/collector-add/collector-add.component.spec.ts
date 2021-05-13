@@ -3,10 +3,16 @@ import { CollectorAddComponent } from './collector-add.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ArtistService } from '@modules/artist/service/artist.service';
 import { ToastrService } from 'ngx-toastr';
+import { Artist } from '@modules/artist/entities/artist.interface';
+import { ArtistFactory } from '@testing/factories/artist.factory';
+import { TestComponent } from '@testing/component/test.component';
+import { TestingModule } from '@testing/testing.module';
+
+const artist: Artist = new ArtistFactory().create();
 
 describe('CollectorAddComponent', () => {
   let component: CollectorAddComponent;
@@ -32,7 +38,13 @@ describe('CollectorAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+      imports: [
+        TestingModule,
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([
+          { path: 'collectors/:id', component: TestComponent }
+        ])
+      ],
       declarations: [CollectorAddComponent],
       providers: [
         {
@@ -63,7 +75,7 @@ describe('CollectorAddComponent', () => {
     fixture = TestBed.createComponent(CollectorAddComponent);
     component = fixture.componentInstance;
 
-    addMusician.and.returnValue(of());
+    addMusician.and.returnValue(of({}));
     toastrSuccess.and.returnValue(() => {});
     toastrError.and.returnValue(() => {});
     fetchArtists.and.returnValue(
@@ -120,5 +132,19 @@ describe('CollectorAddComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add artist to favorites', () => {
+    fixture.ngZone.run(() =>
+      expect(component.addArtistToFavorites(artist)).toBeUndefined()
+    );
+  });
+
+  it('should generate error on add artist to favorites', () => {
+    addMusician.and.returnValue(throwError({ status: 400, message: 'Error' }));
+    fixture.detectChanges();
+    fixture.ngZone.run(() =>
+      expect(component.addArtistToFavorites(artist)).toBeUndefined()
+    );
   });
 });

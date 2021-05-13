@@ -41,27 +41,29 @@ export class CollectorAddAlbumComponent implements OnInit, OnDestroy {
   }
 
   public addAlbumToFavorites(album: Album): void {
-    this.collectorService
-      .addAlbum({
-        collectorId: this.id,
-        albumId: album.id.toString()
-      })
-      .subscribe(
-        () => {
-          this.toastr.success(
-            album.name,
-            $localize`Albúm agregado correctamente`
-          );
-          this.router.navigateByUrl('/collectors/' + this.id);
-        },
-        (error) => {
-          this.toastr.error(
-            error?.error?.message ||
-              $localize`No hemos podido agregar el albúm`,
-            $localize`Ha ocurrido un error`
-          );
-        }
-      );
+    this.subscriptions.push(
+      this.collectorService
+        .addAlbum({
+          collectorId: this.id,
+          albumId: album.id.toString()
+        })
+        .subscribe(
+          () => {
+            this.toastr.success(
+              album.name,
+              $localize`Albúm agregado correctamente`
+            );
+            this.router.navigateByUrl('/collectors/' + this.id);
+          },
+          (error) => {
+            this.toastr.error(
+              error?.error?.message ||
+                $localize`No hemos podido agregar el albúm`,
+              $localize`Ha ocurrido un error`
+            );
+          }
+        )
+    );
   }
 
   get id(): string {

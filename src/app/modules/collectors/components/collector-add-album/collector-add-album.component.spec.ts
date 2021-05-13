@@ -6,9 +6,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { ArtistService } from '@modules/artist/service/artist.service';
 import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { AlbumService } from '@modules/album/services/album.service';
 import { ToastrService } from 'ngx-toastr';
+import { AlbumFactory } from '@testing/factories/album.factory';
+import { Album } from '@modules/album/album.interface';
+import { TestComponent } from '@testing/component/test.component';
+import { TestingModule } from '@testing/testing.module';
+
+const album: Album = new AlbumFactory().create();
 
 describe('CollectorAddAlbumComponent', () => {
   let component: CollectorAddAlbumComponent;
@@ -32,7 +38,13 @@ describe('CollectorAddAlbumComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+      imports: [
+        TestingModule,
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([
+          { path: 'collectors/:id', component: TestComponent }
+        ])
+      ],
       declarations: [CollectorAddAlbumComponent],
       providers: [
         {
@@ -163,5 +175,19 @@ describe('CollectorAddAlbumComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add album to favorites', () => {
+    fixture.ngZone.run(() =>
+      expect(component.addAlbumToFavorites(album)).toBeUndefined()
+    );
+  });
+
+  it('should generate error on add album to favorites', () => {
+    addAlbum.and.returnValue(throwError({ status: 400, message: 'Error' }));
+    fixture.detectChanges();
+    fixture.ngZone.run(() =>
+      expect(component.addAlbumToFavorites(album)).toBeUndefined()
+    );
   });
 });

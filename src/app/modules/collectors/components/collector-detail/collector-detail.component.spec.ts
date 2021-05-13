@@ -4,10 +4,18 @@ import { CollectorDetailComponent } from './collector-detail.component';
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AlbumService } from '@modules/album/services/album.service';
 import { ToastrService } from 'ngx-toastr';
+import { Album } from '@modules/album/album.interface';
+import { AlbumFactory } from '@testing/factories/album.factory';
+import { Artist } from '@modules/artist/entities/artist.interface';
+import { ArtistFactory } from '@testing/factories/artist.factory';
+
+const album: Album = new AlbumFactory().create();
+const albums: Album[] = new AlbumFactory().createBulk(4);
+const artist: Artist = new ArtistFactory().create();
 
 describe('CollectorDetailComponent', () => {
   let component: CollectorDetailComponent;
@@ -182,8 +190,8 @@ describe('CollectorDetailComponent', () => {
 
     toastrSuccess.and.returnValue(() => {});
     toastrError.and.returnValue(() => {});
-    removeMusician.and.returnValue(of());
-    removeAlbum.and.returnValue(of());
+    removeMusician.and.returnValue(of({}));
+    removeAlbum.and.returnValue(of({}));
 
     fixture.detectChanges();
   });
@@ -195,5 +203,47 @@ describe('CollectorDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should remove artist to favorites', () => {
+    fixture.ngZone.run(() =>
+      expect(component.removeArtistToFavorites(artist.id)).toBeUndefined()
+    );
+  });
+
+  it('should generate error on add artist to favorites', () => {
+    removeMusician.and.returnValue(
+      throwError({ status: 400, message: 'Error' })
+    );
+    fixture.detectChanges();
+    fixture.ngZone.run(() =>
+      expect(component.removeArtistToFavorites(artist.id)).toBeUndefined()
+    );
+  });
+
+  it('should remove album to favorites', () => {
+    fixture.ngZone.run(() =>
+      expect(component.removeAlbumToFavorites(album.id)).toBeUndefined()
+    );
+  });
+
+  it('should generate error on add album to favorites', () => {
+    removeAlbum.and.returnValue(throwError({ status: 400, message: 'Error' }));
+    fixture.detectChanges();
+    fixture.ngZone.run(() =>
+      expect(component.removeAlbumToFavorites(album.id)).toBeUndefined()
+    );
+  });
+
+  it('should search album detail', () => {
+    component.albums = albums;
+    fixture.detectChanges();
+    expect(component.searchAlbumDetail(albums[0].id)).toEqual(albums[0]);
+  });
+
+  it('should search album detail to be null', () => {
+    component.albums = null;
+    fixture.detectChanges();
+    expect(component.searchAlbumDetail(album.id)).toBeNull();
   });
 });

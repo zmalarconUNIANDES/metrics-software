@@ -38,27 +38,29 @@ export class CollectorAddComponent implements OnInit, OnDestroy {
   }
 
   public addArtistToFavorites(artist: Artist): void {
-    this.collectorService
-      .addMusician({
-        collectorId: this.id,
-        musicianId: artist.id.toString()
-      })
-      .subscribe(
-        () => {
-          this.toastr.success(
-            artist.name,
-            $localize`Artista agregado correctamente`
-          );
-          this.router.navigateByUrl('/collectors/' + this.id);
-        },
-        (error) => {
-          this.toastr.error(
-            error?.error?.message ||
-              $localize`No hemos podido agregar al artista`,
-            $localize`Ha ocurrido un error`
-          );
-        }
-      );
+    this.subscriptions.push(
+      this.collectorService
+        .addMusician({
+          collectorId: this.id,
+          musicianId: artist.id.toString()
+        })
+        .subscribe(
+          () => {
+            this.toastr.success(
+              artist.name,
+              $localize`Artista agregado correctamente`
+            );
+            this.router.navigateByUrl('/collectors/' + this.id);
+          },
+          (error) => {
+            this.toastr.error(
+              error?.error?.message ||
+                $localize`No hemos podido agregar al artista`,
+              $localize`Ha ocurrido un error`
+            );
+          }
+        )
+    );
   }
 
   get id(): string {

@@ -4,7 +4,7 @@ import {
   Album,
   Artist,
   Prizes
-} from '../../src/app/modules/artist/entities/artist.interface';
+} from '@modules/artist/entities/artist.interface';
 
 export class ArtistFactory extends AbstractFactory {
   public create(): Artist {
@@ -29,6 +29,7 @@ export class ArtistFactory extends AbstractFactory {
       releaseDate: faker.date.past()
     };
   }
+
   public createPrize(): Prizes {
     return {
       id: faker.datatype.number({ min: 1, max: 1000 }).toString(),
