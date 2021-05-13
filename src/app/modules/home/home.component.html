@@ -1,11 +1,11 @@
 <section class="container">
 	<div class="row">
-        <h1 class="display-none">Home</h1>
+        <h1 class="display-none" i18n>Home</h1>
         <div class="col col-lg-7 col-md-6 col-sm-12 pl-0 pr-0">
             <div id="demo" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="{{i}}" class="active" [ngClass]="{'active': i === 0}" *ngFor="let album of albums; let i=index;"></li>
+                    <li data-target="#demo" class="active" [ngClass]="{'active': i === 0}" *ngFor="let album of albums; let i=index;"></li>
                 </ul>
 
                 <!-- The slideshow -->
@@ -28,9 +28,8 @@
             <div class="row">
                 <div class="col col-lg-6 col-md-6 col-sm-12 pl-0 pr-0" *ngFor="let album of albums; let i=index;">
                     <a class="thumbnail" [routerLink]="['/albums/detail', album.id]" data-image-id="" data-toggle="modal" data-title=""
-                    data-image="{{album.cover}}"
-                    data-target="#image-gallery"
-                    alt="{{album.name}}">
+
+                    data-target="#image-gallery">
                         <img class="img-thumbnail not-border"
                             [src]="album.cover"
                             alt="{{album.name}}" />
@@ -43,7 +42,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 pl-0 mt-3 mb-3">
             <div class="title-header text-center">
-                <h4>Artistas</h4>
+                <h4 i18n>Artistas</h4>
             </div>
             <ul class="event-list">
                 <li *ngFor="let musician of musicians; let i=index;">
@@ -60,12 +59,12 @@
             <div class="card-content">
                 <div class="card-img">
                     <img src="https://placeimg.com/380/230/nature" alt="">
-                    <span><h3>heading</h3></span>
+                    <span><h3 i18n>heading</h3></span>
                 </div>
                 <div class="card-desc">
-                    <h3>Heading</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam</p>
-                    <a href="#" class="btn-card">Read</a>   
+                    <h3 i18n>Heading</h3>
+                    <p i18n>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam</p>
+                    <a href="#" class="btn-card">Read</a>
                 </div>
             </div>
         </div>

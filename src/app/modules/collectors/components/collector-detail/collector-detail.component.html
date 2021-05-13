@@ -5,20 +5,20 @@
 <ng-template #working>
   <div class="d-flex justify-content-center">
     <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+      <span class="sr-only" i18n>Loading...</span>
     </div>
   </div>
 </ng-template>
 
 <ng-template #empty>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center" i18n>
     No pudimos cargar la información del coleccionista
   </div>
 </ng-template>
 
 <ng-template #content>
   <a class="custom-link d-inline-block" routerLink="/collectors">
-    <h5 class="pb-3"><em class="bi-arrow-left pr-3"></em>Coleccionistas</h5>
+    <h5 class="pb-3" i18n><em class="bi-arrow-left pr-3"></em>Coleccionistas</h5>
   </a>
   <div class="row">
     <div class="col-sm-12 col-md-3">
@@ -32,7 +32,7 @@
   </div>
 
   <section>
-    <h4 class="mt-5 mb-3">Comentarios</h4>
+    <h4 class="mt-5 mb-3" i18n>Comentarios</h4>
     <div class="row">
       <div *ngFor="let comment of collector.comments" class="col-sm-12 mb-2 border-bottom">
         <div class="d-flex justify-content-between align-content-center">
@@ -47,7 +47,7 @@
   </section>
 
   <section>
-    <h4 class="mt-5 mb-3">Artistas favoritos</h4>
+    <h4 class="mt-5 mb-3" i18n>Artistas favoritos</h4>
     <div class="row">
       <div *ngFor="let performer of collector.favoritePerformers" class="col-sm-12 col-md-4 col-lg-3 mb-2">
         <div class="card">
