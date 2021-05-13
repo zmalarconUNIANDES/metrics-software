@@ -6,12 +6,14 @@ import { CollectorsComponent } from './components/collectors/collectors.componen
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import { CollectorAddComponent } from './components/collector-add/collector-add.component';
+import { CollectorAddAlbumComponent } from './components/collector-add-album/collector-add-album.component';
 
 @NgModule({
   declarations: [
     CollectorsComponent,
     CollectorDetailComponent,
-    CollectorAddComponent
+    CollectorAddComponent,
+    CollectorAddAlbumComponent
   ],
   imports: [CommonModule, CollectorsRoutingModule],
   providers: [CollectorService]

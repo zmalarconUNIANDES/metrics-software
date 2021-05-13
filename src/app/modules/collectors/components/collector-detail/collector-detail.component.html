@@ -51,6 +51,36 @@
 
   <section>
     <div class="mt-5 mb-3 d-flex justify-content-between">
+      <h4 i18n>Álbumes</h4>
+      <button routerLink="add-album" class="btn btn-primary custom-btn-search" type="submit" i18n><em
+        class="bi-plus-circle-fill mr-3"></em>Agregar
+      </button>
+    </div>
+    <div class="row" *ngIf="albums">
+      <div *ngFor="let album of collector.collectorAlbums" class="col col-sm-12 col-md-6 col-lg-3 card-item-container">
+        <div class="widget single-news" *ngIf="searchAlbumDetail(album.id) as albumData"
+             [routerLink]="['/album', album.id]">
+          <div class="image">
+            <img [src]="albumData.cover" class="img-responsive" alt="{{ albumData.name }}">
+            <span class="gradient"></span>
+          </div>
+          <div class="details">
+            <ul class="list-inline social-lists animate">
+              <li><a href="#" title="Play Album"><em class="fa fa-play"></em></a></li>
+            </ul>
+            <div class="category"><a [routerLink]="['/albums/detail', album.id]"
+                                     title="DisqueraAlbum{{album.id}}">{{ albumData.recordLabel }} </a></div>
+            <p><a [routerLink]="['/albums/detail', album.id]"
+                  title="NombreAlbum{{album.id}}">{{ albumData.name }}</a></p>
+          </div>
+        </div>
+        <em (click)="removeAlbumToFavorites(album.id)" class="bi-trash-fill trash-button"></em>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mt-5 mb-3 d-flex justify-content-between">
       <h4 i18n>Artistas favoritos</h4>
       <button routerLink="add" class="btn btn-primary custom-btn-search" type="submit" i18n><em
         class="bi-plus-circle-fill mr-3"></em>Agregar
@@ -58,7 +88,7 @@
     </div>
     <div class="row">
       <div *ngFor="let performer of collector.favoritePerformers"
-           class="col-sm-12 col-md-4 col-lg-3 mb-2 artist-container">
+           class="col-sm-12 col-md-4 col-lg-3 mb-2 card-item-container">
         <div class="card" [routerLink]="['/artists', performer.id]">
           <img [src]="performer.image" class="card-img-top" alt="performer-image">
           <div class="card-body">

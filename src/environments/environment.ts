@@ -12,7 +12,8 @@ export const environment = {
     services: {
       collectors: {
         base: '/collectors',
-        add_musician: '/collectors/{collectorId}/musicians/{musicianId}'
+        add_musician: '/collectors/{collectorId}/musicians/{musicianId}',
+        add_album: '/collectors/{collectorId}/albums/{albumId}'
       },
       artists: '/musicians',
       albums: '/albums'
