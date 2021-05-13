@@ -4,8 +4,10 @@ import { urlBuilder } from '@app/commons/utils/url-builder';
 import { environment as ENV } from '@environment';
 import { HttpClient } from '@angular/common/http';
 import {
-  AddArtistToCollectorFavorites,
-  Collector
+  AlbumToCollectorFavorites,
+  ArtistToCollectorFavorites,
+  Collector,
+  RemoveAlbumToCollectorFavorites
 } from '@modules/collectors/entities/colllector.interface';
 
 @Injectable()
@@ -26,23 +28,38 @@ export class CollectorService {
     return this.http.get<Collector>(url);
   }
 
-  public addMusician(
-    data: AddArtistToCollectorFavorites
-  ): Observable<Collector> {
+  public addMusician(data: ArtistToCollectorFavorites): Observable<void> {
     const url = urlBuilder.services(ENV.api.services.collectors.add_musician, {
       ...data
     });
 
-    return this.http.post<Collector>(url, {});
+    return this.http.post<void>(url, {});
   }
 
-  public removeMusician(
-    data: AddArtistToCollectorFavorites
-  ): Observable<Collector> {
+  public removeMusician(data: ArtistToCollectorFavorites): Observable<void> {
     const url = urlBuilder.services(ENV.api.services.collectors.add_musician, {
       ...data
     });
 
-    return this.http.delete<Collector>(url, {});
+    return this.http.delete<void>(url, {});
+  }
+
+  public addAlbum(data: AlbumToCollectorFavorites): Observable<void> {
+    const url = urlBuilder.services(ENV.api.services.collectors.add_album, {
+      ...data
+    });
+
+    return this.http.post<void>(url, {
+      price: Math.floor(Math.random() * 45000) + 10000,
+      status: 'Active'
+    });
+  }
+
+  public removeAlbum(data: RemoveAlbumToCollectorFavorites): Observable<void> {
+    const url = urlBuilder.services(ENV.api.services.collectors.add_album, {
+      ...data
+    });
+
+    return this.http.delete<void>(url, {});
   }
 }

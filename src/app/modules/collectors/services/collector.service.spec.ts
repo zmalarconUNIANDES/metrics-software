@@ -50,4 +50,64 @@ describe('CollectorService', () => {
     req.flush(mockData);
     expect(req.request.method).toBe('GET');
   });
+
+  it('should to call add musician', () => {
+    const { service, httpTestingController } = setup();
+    const collectorId = '123';
+    const musicianId = '456';
+    const url = urlBuilder.services(ENV.api.services.collectors.add_musician, {
+      collectorId,
+      musicianId
+    });
+    const mockData = {};
+    service.addMusician({ collectorId, musicianId }).subscribe((data) => {});
+    const req = httpTestingController.expectOne(url);
+    req.flush(mockData);
+    expect(req.request.method).toBe('POST');
+  });
+
+  it('should to call remove musician', () => {
+    const { service, httpTestingController } = setup();
+    const collectorId = '123';
+    const musicianId = '456';
+    const url = urlBuilder.services(ENV.api.services.collectors.add_musician, {
+      collectorId,
+      musicianId
+    });
+    const mockData = {};
+    service.removeMusician({ collectorId, musicianId }).subscribe((data) => {});
+    const req = httpTestingController.expectOne(url);
+    req.flush(mockData);
+    expect(req.request.method).toBe('DELETE');
+  });
+
+  it('should to call add album', () => {
+    const { service, httpTestingController } = setup();
+    const collectorId = '123';
+    const albumId = '456';
+    const url = urlBuilder.services(ENV.api.services.collectors.add_album, {
+      collectorId,
+      albumId
+    });
+    const mockData = {};
+    service.addAlbum({ collectorId, albumId }).subscribe((data) => {});
+    const req = httpTestingController.expectOne(url);
+    req.flush(mockData);
+    expect(req.request.method).toBe('POST');
+  });
+
+  it('should to call remove album', () => {
+    const { service, httpTestingController } = setup();
+    const collectorId = '123';
+    const albumId = '456';
+    const url = urlBuilder.services(ENV.api.services.collectors.add_album, {
+      collectorId,
+      albumId
+    });
+    const mockData = {};
+    service.removeAlbum({ collectorId, albumId }).subscribe((data) => {});
+    const req = httpTestingController.expectOne(url);
+    req.flush(mockData);
+    expect(req.request.method).toBe('DELETE');
+  });
 });

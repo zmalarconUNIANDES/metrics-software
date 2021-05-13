@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectorsComponent } from '@modules/collectors/components/collectors/collectors.component';
 import { CollectorDetailComponent } from '@modules/collectors/components/collector-detail/collector-detail.component';
 import { CollectorAddComponent } from '@modules/collectors/components/collector-add/collector-add.component';
+import { CollectorAddAlbumComponent } from '@modules/collectors/components/collector-add-album/collector-add-album.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: ':id/add',
     component: CollectorAddComponent
+  },
+  {
+    path: ':id/add-album',
+    component: CollectorAddAlbumComponent
   }
 ];
 
