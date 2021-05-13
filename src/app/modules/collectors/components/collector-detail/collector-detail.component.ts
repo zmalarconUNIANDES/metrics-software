@@ -50,13 +50,13 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
         })
         .subscribe(
           () => {
-            this.toastr.success('Artista borrado');
+            this.toastr.success($localize`Artista borrado`);
             this.getCollector();
           },
           (error) => {
             this.toastr.error(
-              error?.error?.message || 'Error desconocido',
-              'No hemos podido borrar el artista'
+              error?.error?.message || $localize`Error desconocido`,
+              $localize`No hemos podido borrar el artista`
             );
           }
         )
@@ -72,13 +72,13 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
         })
         .subscribe(
           () => {
-            this.toastr.success('Albúm borrado');
+            this.toastr.success($localize`Albúm borrado`);
             this.getCollector();
           },
           (error) => {
             this.toastr.error(
-              error?.error?.message || 'Error desconocido',
-              'No hemos podido borrar el albúm'
+              error?.error?.message || $localize`Error desconocido`,
+              $localize`No hemos podido borrar el albúm`
             );
           }
         )

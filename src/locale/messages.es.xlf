@@ -319,8 +319,44 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-add-album/collector-add-album.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="6607428373160578597">
+        <source>Artista agregado correctamente</source>
+      </trans-unit>
+      <trans-unit id="8621112890750443845">
+        <source>No hemos podido agregar al artista</source>
+      </trans-unit>
+      <trans-unit id="8957016462061956593">
+        <source>Artista borrado</source>
+      </trans-unit>
+      <trans-unit id="2225217625927037543">
+        <source>Error desconocido</source>
+      </trans-unit>
+      <trans-unit id="6892200629103035894">
+        <source>No hemos podido borrar el artista</source>
+      </trans-unit>
+      <trans-unit id="2978836026414553157">
+        <source>Albúm borrado</source>
+      </trans-unit>
+      <trans-unit id="2225217625927037543">
+        <source>Error desconocido</source>
+      </trans-unit>
+      <trans-unit id="1922139196796733216">
+        <source>No hemos podido borrar el albúm</source>
+      </trans-unit>
+      <trans-unit id="6131625014253304773">
+        <source>Albúm agregado correctamente</source>
+      </trans-unit>
+      <trans-unit id="7368333446118367714">
+        <source>No hemos podido agregar el albúm</source>
+      </trans-unit>
+      <trans-unit id="5140427608194898979">
+        <source>Ha ocurrido un error</source>
+      </trans-unit>
+      <trans-unit id="5140427608194898979">
+        <source>Ha ocurrido un error</source>
       </trans-unit>
     </body>
   </file>

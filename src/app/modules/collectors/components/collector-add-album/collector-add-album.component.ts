@@ -48,13 +48,17 @@ export class CollectorAddAlbumComponent implements OnInit, OnDestroy {
       })
       .subscribe(
         () => {
-          this.toastr.success(album.name, 'Albúm agregado correctamente');
+          this.toastr.success(
+            album.name,
+            $localize`Albúm agregado correctamente`
+          );
           this.router.navigateByUrl('/collectors/' + this.id);
         },
         (error) => {
           this.toastr.error(
-            error?.error?.message || 'No hemos podido agregar el albúm',
-            'Ha ocurrido un error'
+            error?.error?.message ||
+              $localize`No hemos podido agregar el albúm`,
+            $localize`Ha ocurrido un error`
           );
         }
       );

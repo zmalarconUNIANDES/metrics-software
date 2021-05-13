@@ -45,13 +45,17 @@ export class CollectorAddComponent implements OnInit, OnDestroy {
       })
       .subscribe(
         () => {
-          this.toastr.success(artist.name, 'Artista agregado correctamente');
+          this.toastr.success(
+            artist.name,
+            $localize`Artista agregado correctamente`
+          );
           this.router.navigateByUrl('/collectors/' + this.id);
         },
         (error) => {
           this.toastr.error(
-            error?.error?.message || 'No hemos podido agregar al artista',
-            'Ha ocurrido un error'
+            error?.error?.message ||
+              $localize`No hemos podido agregar al artista`,
+            $localize`Ha ocurrido un error`
           );
         }
       );
