@@ -5,6 +5,7 @@ import { CollectorService } from '@modules/collectors/services/collector.service
 import { removeSubscriptions } from '@app/commons/utils/util';
 import { AlbumService } from '@modules/album/services/album.service';
 import { Album } from '@modules/album/album.interface';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-collector-add-album',
@@ -22,6 +23,7 @@ export class CollectorAddAlbumComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private albumService: AlbumService,
     private collectorService: CollectorService
   ) {}
@@ -44,9 +46,18 @@ export class CollectorAddAlbumComponent implements OnInit, OnDestroy {
         collectorId: this.id,
         albumId: album.id.toString()
       })
-      .subscribe(() => {
-        this.router.navigateByUrl('/collectors/' + this.id);
-      });
+      .subscribe(
+        () => {
+          this.toastr.success(album.name, 'Albúm agregado correctamente');
+          this.router.navigateByUrl('/collectors/' + this.id);
+        },
+        (error) => {
+          this.toastr.error(
+            error?.error?.message || 'No hemos podido agregar el albúm',
+            'Ha ocurrido un error'
+          );
+        }
+      );
   }
 
   get id(): string {

@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ArtistService } from '@modules/artist/service/artist.service';
+import { ToastrService } from 'ngx-toastr';
 
 describe('CollectorAddComponent', () => {
   let component: CollectorAddComponent;
@@ -19,8 +20,15 @@ describe('CollectorAddComponent', () => {
     'fetchArtists'
   ]);
 
+  const toastrServiceSpy = jasmine.createSpyObj('ArtistService', [
+    'success',
+    'error'
+  ]);
+
   const addMusician = collectorServiceSpy.addMusician as jasmine.Spy;
   const fetchArtists = artistServiceSpy.fetchArtists as jasmine.Spy;
+  const toastrSuccess = toastrServiceSpy.success as jasmine.Spy;
+  const toastrError = toastrServiceSpy.error as jasmine.Spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,6 +42,10 @@ describe('CollectorAddComponent', () => {
         {
           provide: ArtistService,
           useValue: artistServiceSpy
+        },
+        {
+          provide: ToastrService,
+          useValue: toastrServiceSpy
         },
         {
           provide: ActivatedRoute,
@@ -52,6 +64,8 @@ describe('CollectorAddComponent', () => {
     component = fixture.componentInstance;
 
     addMusician.and.returnValue(of());
+    toastrSuccess.and.returnValue(() => {});
+    toastrError.and.returnValue(() => {});
     fetchArtists.and.returnValue(
       of([
         {
