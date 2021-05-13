@@ -5,6 +5,7 @@ import { CollectorService } from '@modules/collectors/services/collector.service
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CollectorDetailComponent', () => {
   let component: CollectorDetailComponent;
@@ -16,7 +17,7 @@ describe('CollectorDetailComponent', () => {
   const getCollector = collectorServiceSpy.getCollector as jasmine.Spy;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
       declarations: [CollectorDetailComponent],
       providers: [
         {

@@ -30,7 +30,7 @@ describe('CollectorService', () => {
 
   it('should to call fetch collectors', () => {
     const { service, httpTestingController } = setup();
-    const url = urlBuilder.services(ENV.api.services.collectors);
+    const url = urlBuilder.services(ENV.api.services.collectors.base);
     const mockData = {};
     service.fetchCollectors().subscribe((data) => {});
     const req = httpTestingController.expectOne(url);
@@ -41,7 +41,9 @@ describe('CollectorService', () => {
   it('should to call get collector', () => {
     const { service, httpTestingController } = setup();
     const id = '123';
-    const url = urlBuilder.services(`${ENV.api.services.collectors}/${id}`);
+    const url = urlBuilder.services(
+      `${ENV.api.services.collectors.base}/${id}`
+    );
     const mockData = {};
     service.getCollector(id).subscribe((data) => {});
     const req = httpTestingController.expectOne(url);
