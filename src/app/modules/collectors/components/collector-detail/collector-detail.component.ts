@@ -9,6 +9,7 @@ import {
 import { Subscription } from 'rxjs';
 import { Album } from '@modules/album/album.interface';
 import { AlbumService } from '@modules/album/services/album.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-collector-detail',
@@ -26,6 +27,7 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private service: CollectorService,
     private albumsService: AlbumService
   ) {}
@@ -46,7 +48,18 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
           collectorId: this.id,
           musicianId: id.toString()
         })
-        .subscribe(() => this.getCollector())
+        .subscribe(
+          () => {
+            this.toastr.success('Artista borrado');
+            this.getCollector();
+          },
+          (error) => {
+            this.toastr.error(
+              error?.error?.message || 'Error desconocido',
+              'No hemos podido borrar el artista'
+            );
+          }
+        )
     );
   }
 
@@ -57,7 +70,18 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
           collectorId: this.id,
           albumId: id.toString()
         })
-        .subscribe(() => this.getCollector())
+        .subscribe(
+          () => {
+            this.toastr.success('Albúm borrado');
+            this.getCollector();
+          },
+          (error) => {
+            this.toastr.error(
+              error?.error?.message || 'Error desconocido',
+              'No hemos podido borrar el albúm'
+            );
+          }
+        )
     );
   }
 

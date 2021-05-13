@@ -7,6 +7,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AlbumService } from '@modules/album/services/album.service';
+import { ToastrService } from 'ngx-toastr';
 
 describe('CollectorDetailComponent', () => {
   let component: CollectorDetailComponent;
@@ -20,10 +21,16 @@ describe('CollectorDetailComponent', () => {
   const albumServiceSpy = jasmine.createSpyObj('CollectorService', [
     'getAlbums'
   ]);
+  const toastrServiceSpy = jasmine.createSpyObj('ArtistService', [
+    'success',
+    'error'
+  ]);
   const getCollector = collectorServiceSpy.getCollector as jasmine.Spy;
   const removeMusician = collectorServiceSpy.removeMusician as jasmine.Spy;
   const removeAlbum = collectorServiceSpy.removeAlbum as jasmine.Spy;
   const getAlbums = albumServiceSpy.getAlbums as jasmine.Spy;
+  const toastrSuccess = toastrServiceSpy.success as jasmine.Spy;
+  const toastrError = toastrServiceSpy.error as jasmine.Spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -37,6 +44,10 @@ describe('CollectorDetailComponent', () => {
         {
           provide: AlbumService,
           useValue: albumServiceSpy
+        },
+        {
+          provide: ToastrService,
+          useValue: toastrServiceSpy
         },
         {
           provide: ActivatedRoute,
@@ -169,6 +180,8 @@ describe('CollectorDetailComponent', () => {
       ])
     );
 
+    toastrSuccess.and.returnValue(() => {});
+    toastrError.and.returnValue(() => {});
     removeMusician.and.returnValue(of());
     removeAlbum.and.returnValue(of());
 

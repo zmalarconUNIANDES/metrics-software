@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { removeSubscriptions } from '@app/commons/utils/util';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CollectorService } from '@modules/collectors/services/collector.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-collector-add',
@@ -19,6 +20,7 @@ export class CollectorAddComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private artistService: ArtistService,
     private collectorService: CollectorService
   ) {}
@@ -41,9 +43,18 @@ export class CollectorAddComponent implements OnInit, OnDestroy {
         collectorId: this.id,
         musicianId: artist.id.toString()
       })
-      .subscribe(() => {
-        this.router.navigateByUrl('/collectors/' + this.id);
-      });
+      .subscribe(
+        () => {
+          this.toastr.success(artist.name, 'Artista agregado correctamente');
+          this.router.navigateByUrl('/collectors/' + this.id);
+        },
+        (error) => {
+          this.toastr.error(
+            error?.error?.message || 'No hemos podido agregar al artista',
+            'Ha ocurrido un error'
+          );
+        }
+      );
   }
 
   get id(): string {

@@ -8,6 +8,7 @@ import { ArtistService } from '@modules/artist/service/artist.service';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { AlbumService } from '@modules/album/services/album.service';
+import { ToastrService } from 'ngx-toastr';
 
 describe('CollectorAddAlbumComponent', () => {
   let component: CollectorAddAlbumComponent;
@@ -19,8 +20,15 @@ describe('CollectorAddAlbumComponent', () => {
 
   const albumServiceSpy = jasmine.createSpyObj('ArtistService', ['getAlbums']);
 
+  const toastrServiceSpy = jasmine.createSpyObj('ArtistService', [
+    'success',
+    'error'
+  ]);
+
   const addAlbum = collectorServiceSpy.addAlbum as jasmine.Spy;
   const getAlbums = albumServiceSpy.getAlbums as jasmine.Spy;
+  const toastrSuccess = toastrServiceSpy.success as jasmine.Spy;
+  const toastrError = toastrServiceSpy.error as jasmine.Spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,6 +42,10 @@ describe('CollectorAddAlbumComponent', () => {
         {
           provide: AlbumService,
           useValue: albumServiceSpy
+        },
+        {
+          provide: ToastrService,
+          useValue: toastrServiceSpy
         },
         {
           provide: ActivatedRoute,
@@ -52,6 +64,8 @@ describe('CollectorAddAlbumComponent', () => {
     component = fixture.componentInstance;
 
     addAlbum.and.returnValue(of());
+    toastrSuccess.and.returnValue(() => {});
+    toastrError.and.returnValue(() => {});
     getAlbums.and.returnValue(
       of([
         {

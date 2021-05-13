@@ -34,6 +34,7 @@
     "exec-sh": "^0.3.4",
     "faker": "^5.5.3",
     "jquery": "^3.6.0",
+    "ngx-toastr": "^13.2.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "url-template": "^2.0.8",
