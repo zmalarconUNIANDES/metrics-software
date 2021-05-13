@@ -28,3 +28,8 @@ export interface Collector {
   favoritePerformers: FavoritePerformer[];
   collectorAlbums: CollectorAlbum[];
 }
+
+export interface AddArtistToCollectorFavorites {
+  collectorId: string;
+  musicianId: string;
+}

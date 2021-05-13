@@ -266,20 +266,59 @@
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="f97a6321aa36beed12b6ed8d2378ecf4d95054d6" datatype="html">
+        <source>Detalle de colecccionista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9bea75f59a97f4d38867c24cd4ebc75243eaa406" datatype="html">
         <source>Comentarios</source>
         <target>Comments</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f08b0f1ce3f57e40d6d91baf2b9344addcbcb329" datatype="html">
         <source>Artistas favoritos</source>
-        <target>Favourite artists</target>
+        <source>Favourite artists</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="301218cac9ea0b1e51b36626f8eb25fdfb9e9164" datatype="html">
+        <source><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Agregar</source>
+        <target><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Add</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cebb442a814d91fc98afd93940ad487d3a163dff" datatype="html">
+        <source><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Volver</source>
+        <target><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Back</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-add/collector-add.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c2ea2ecde9a6e43ba442119db40a2225618afb3" datatype="html">
+        <source>Agregar artistas a favoritos</source>
+        <target>Add artists to favorites</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-add/collector-add.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6143d9eb1954910ca6f9908e99f22e962086f672" datatype="html">
+        <source><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Agregar</source>
+        <target><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Add</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-add/collector-add.component.html</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
     </body>

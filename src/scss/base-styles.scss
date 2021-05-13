@@ -28,6 +28,10 @@ body {
   }
 }
 
+.gray-color {
+  color: rgb(110, 109, 109);
+}
+
 .card {
   &.hover {
     transition: .3s;
