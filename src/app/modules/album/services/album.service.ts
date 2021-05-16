@@ -21,4 +21,10 @@ export class AlbumService {
     const url = urlBuilder.services(`${ENV.api.services.albums}/${id}`);
     return this.http.get<Album>(url);
   }
+
+  addNewAlbum (albumInfo: object): Observable<void> {
+    const url = urlBuilder.services(ENV.api.services.albums);
+
+    return this.http.post<void>(url, albumInfo);
+  }
 }
