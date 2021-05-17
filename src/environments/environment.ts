@@ -16,7 +16,8 @@ export const environment = {
         add_album: '/collectors/{collectorId}/albums/{albumId}'
       },
       artists: '/musicians',
-      albums: '/albums'
+      albums: '/albums',
+      comments: '/albums/{albumId}/comments'
     }
   }
 };
