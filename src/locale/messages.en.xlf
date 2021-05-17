@@ -384,6 +384,30 @@
         <source>No se ha agregado el comentario</source>
         <target>Comment has not been added</target>
       </trans-unit>
+      <trans-unit id="7836066765127305758">
+        <source>Músico agregado correctamente</source>
+        <target>Musician added correctly</target>
+      </trans-unit>
+      <trans-unit id="3027149824146283512">
+        <source>No se ha agregado el músico</source>
+        <target>Musician has not been added</target>
+      </trans-unit>
+      <trans-unit id="f557c805d8f762e54ebbf66066ff34e0635a53bb" datatype="html">
+        <source>Integrantes</source>
+        <target>Musicians</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-details/artist-details.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7a7ec7e5ff7ff24a5c02515a38009a4b436505f" datatype="html">
+        <source>Músico:</source>
+        <target>Musician:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-musician-band/artist-musician-band.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

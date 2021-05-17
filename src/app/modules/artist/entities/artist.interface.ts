@@ -4,6 +4,7 @@ export interface Artist {
   image: string;
   description: string;
   albums: Album[];
+  musicians?: M[];
   performerPrizes: Prizes[];
 }
 export interface Album {
@@ -19,4 +20,10 @@ export interface Album {
 export interface Prizes {
   id: number;
   premiationDate: Date;
+}
+
+interface M {
+  name: string;
+  image: string;
+  birthDate: Date;
 }
