@@ -1,7 +1,8 @@
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
   <div class="row">
         <div class="w-100">
-            <h4 class="mb-4" i18n><em class="bi-arrow-left pr-3" routerLink="/albums"></em> Detalle del álbum: {{ album.name }}</h4></div>
+            <h4 class="mb-4" *ngIf="album" i18n><em class="bi-arrow-left pr-3" routerLink="/albums"></em> Detalle del álbum: {{ album.name }}</h4>
+        </div>
         <div class="w-100" *ngIf="!album" i18n>No hay detalle para este álbum</div>
 
         <div class="profile-head" *ngIf="album">
@@ -50,6 +51,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="divider-grad-mask"></div>
+
+        <div class="w-100 card" *ngIf="album">
+            <app-album-comments [comments]="album.comments" [idAlbum]="album.id"></app-album-comments>
         </div>
     </div>
 </div>

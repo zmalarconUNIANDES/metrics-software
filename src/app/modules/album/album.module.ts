@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AlbumService } from './services/album.service';
 import { CommonsModule } from '@app/commons/commons.module';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
+import { AlbumCommentsComponent } from './components/album-comments/album-comments.component';
 
 const AlbumRouting: Routes = [
   {
@@ -18,8 +21,14 @@ const AlbumRouting: Routes = [
 ];
 
 @NgModule({
-  declarations: [AlbumsComponent, AlbumDetailComponent],
-  imports: [CommonModule, RouterModule.forChild(AlbumRouting), CommonsModule],
+  declarations: [AlbumsComponent, AlbumDetailComponent, AlbumCommentsComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(AlbumRouting),
+    CommonsModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [AlbumService]
 })
 export class AlbumModule {}
