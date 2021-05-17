@@ -178,25 +178,25 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="ecca6cef600cd69326bd4395b09b09c0cdf9e5fb" datatype="html">
+        <source>Coleccionista:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4ab8fdfeadab87d0779d58cceb77ce50aa5ec61b" datatype="html">
         <source>Descripción:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bbfbe3dd56a9a4bad8579f714628747c61229810" datatype="html">
         <source>¿Cómo calificarías este álbum?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ecca6cef600cd69326bd4395b09b09c0cdf9e5fb" datatype="html">
-        <source>Coleccionista:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7b58538b1dd31df6643c09049be1550edbc8641e" datatype="html">
@@ -306,6 +306,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
           <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f557c805d8f762e54ebbf66066ff34e0635a53bb" datatype="html">
+        <source>Integrantes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-details/artist-details.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7a7ec7e5ff7ff24a5c02515a38009a4b436505f" datatype="html">
+        <source>Músico:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-musician-band/artist-musician-band.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
     </body>

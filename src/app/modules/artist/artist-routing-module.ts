@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: ArtistDetailsComponent
+  },
+  {
+    path: 'band/:id',
+    component: ArtistDetailsComponent
   }
 ];
 

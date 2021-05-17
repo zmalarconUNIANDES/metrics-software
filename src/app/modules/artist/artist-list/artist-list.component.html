@@ -1,6 +1,6 @@
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
   <h1 class="pb-3">Artistas</h1>
-  <ng-container *ngTemplateOutlet="artists ? (artists.length > 0 ? content : empty) : working"></ng-container>
+  <ng-container *ngTemplateOutlet="(musicians || bands) ? ((musicians.length > 0 || bands.length > 0) ? content : empty) : working"></ng-container>
 </div>
 
 <ng-template #working>
@@ -19,8 +19,19 @@
 
 <ng-template #content>
   <div class="row">
-    <div *ngFor="let artist of artists" class="col-sm-12 col-md-6 col-lg-4"
+    <div *ngFor="let artist of musicians" class="col-sm-12 col-md-6 col-lg-4"
          [routerLink]="['/artists', artist.id]">
+      <div class="card rounded" style="width: 18rem;">
+        <img class="card-img-top" [src]="artist.image" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-title font-weight-bold">{{ artist.name }}</p>
+          <p class="card-text"> {{ artist.description }}</p>
+          <p class="card-text">{{ (artist.birthDate || artist.creationDate) | date }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let artist of bands" class="col-sm-12 col-md-6 col-lg-4"
+         [routerLink]="['/artists/band', artist.id]">
       <div class="card rounded" style="width: 18rem;">
         <img class="card-img-top" [src]="artist.image" alt="Card image cap">
         <div class="card-body">
