@@ -2,52 +2,51 @@
 
 
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
-  <h1>Agregar un nuevo Album</h1>
+  <h1 i18n>Agregar un nuevo Album</h1>
 
   <form [formGroup] = "albumForm" (ngSubmit)="!albumForm.invalid && createAlbum()">
-    <label for="album-name">Name:</label>
+    <label for="album-name" i18n>Nombre del Album:</label>
     <input id="album-name" type="text" class="form-control" formControlName="name">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('name').hasError('required') && albumForm.get('name').touched">
-      Name required
+      *ngIf="albumForm.get('name').hasError('required') && albumForm.get('name').touched" i18n>
+      Nombre Obligatorio
     </div>
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('name').hasError('minlength') && albumForm.get('name').touched">
-      Name should be longer
+      *ngIf="albumForm.get('name').hasError('minlength') && albumForm.get('name').touched" i18n>
+      El nombre debe ser más largo
     </div>
-    <label for="album-cover">Cover:</label>
+    <label for="album-cover" i18n>Cover:</label>
     <input id="album-cover" type="text" class="form-control" formControlName="cover">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('cover').hasError('required') && albumForm.get('cover').touched">
-      Cover url required
+      *ngIf="albumForm.get('cover').hasError('required') && albumForm.get('cover').touched" i18n>
+      URL Cover es obligatorio
     </div>
-    <label for="album-release">Release date:</label>
+    <label for="album-release" i18n>Fecha Lanzamiento:</label>
     <input id="album-release" type="date" class="form-control" formControlName="releaseDate">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('releaseDate').hasError('required') && albumForm.get('releaseDate').touched">
-      release date  required
+      *ngIf="albumForm.get('releaseDate').hasError('required') && albumForm.get('releaseDate').touched" i18n>
+      Fecha de lanzamiento es obligatoria
     </div>
-    <label for="album-description">Description:</label>
+    <label for="album-description" i18n>Descripción:</label>
     <input id="album-description" type="text" class="form-control" formControlName="description">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('description').hasError('required') && albumForm.get('description').touched">
-      Description required
+      *ngIf="albumForm.get('description').hasError('required') && albumForm.get('description').touched" i18n>
+      La descripción es obligatoria
     </div>
-    <label for="album-genre">Genre:</label>
+    <label for="album-genre" i18n>Género Musical:</label>
     <input id="album-genre" type="text" class="form-control" formControlName="genre">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('genre').hasError('required') && albumForm.get('genre').touched">
-      genre required
+      *ngIf="albumForm.get('genre').hasError('required') && albumForm.get('genre').touched" i18n>
+      El Genero Músical es requerido
     </div>
-    <label for="album-recordlbl">Record Label:</label>
+    <label for="album-recordlbl" i18n>Disquera:</label>
     <input id="album-recordlbl" type="text" class="form-control" formControlName="recordLabel">
     <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="albumForm.get('recordLabel').hasError('required') && albumForm.get('recordLabel').touched">
-      Record Label required
+      *ngIf="albumForm.get('recordLabel').hasError('required') && albumForm.get('recordLabel').touched" i18n>
+      Disquera es requerido
     </div>
     <div>
-      <button type="submit" class="btn pull-right btn-success mt-2" [disabled]="!albumForm.valid">Guardar</button>
-      <button type="cancel" class="btn pull-right btn-danger mt-2 mr-2" (click)="cancelForm()">Cancelar</button>
+      <button type="submit" class="btn pull-right btn-success mt-2" [disabled]="!albumForm.valid" i18n>Guardar</button>
     </div>
 
   </form>
