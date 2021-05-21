@@ -25,11 +25,13 @@ const AlbumRouting: Routes = [
 
 @NgModule({
   declarations: [AlbumsComponent, AlbumDetailComponent, AddAlbumComponent],
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
     RouterModule.forChild(AlbumRouting),
     CommonsModule,
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule
+  ],
   providers: [AlbumService]
 })
 export class AlbumModule {}
