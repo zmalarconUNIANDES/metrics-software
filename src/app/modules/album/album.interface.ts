@@ -30,3 +30,7 @@ export interface Comments {
   description: string;
   rating: number;
 }
+export interface Track {
+  name: string;
+  duration: string;
+}

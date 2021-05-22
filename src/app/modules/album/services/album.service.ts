@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { urlBuilder } from '@app/commons/utils/url-builder';
 import { environment as ENV } from '@environment';
 
-import { Album, Comments } from '@modules/album/album.interface';
+import { Album, Comments, Track } from '@modules/album/album.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,12 @@ export class AlbumService {
       albumId
     });
     return this.http.post<void>(url, { ...comments });
+  }
+
+  addTrackToAlbum(albumId: string, trackInfo: Track): Observable<object> {
+    const url = urlBuilder.services(
+      `${ENV.api.services.albums}/${albumId}/tracks`
+    );
+    return this.http.post<object>(url, trackInfo);
   }
 }
