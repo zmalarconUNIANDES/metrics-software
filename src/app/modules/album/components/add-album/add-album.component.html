@@ -28,19 +28,29 @@
       Fecha de lanzamiento es obligatoria
     </div>
     <label for="album-description" i18n>Descripción:</label>
-    <input id="album-description" type="text" class="form-control" formControlName="description">
+    <textarea id="album-description" type="text" class="form-control" formControlName="description"></textarea>
     <div class="alert alert-danger alert-dismissible fade show"
       *ngIf="albumForm.get('description').hasError('required') && albumForm.get('description').touched" i18n>
       La descripción es obligatoria
     </div>
     <label for="album-genre" i18n>Género Musical:</label>
-    <input id="album-genre" type="text" class="form-control" formControlName="genre">
+    <select class="form-control" id="album-genre" formControlName="genre">
+      <option>Rock</option>
+      <option>Salsa</option>
+      <option>Classical</option>
+      <option>Folk</option>
+    </select>
     <div class="alert alert-danger alert-dismissible fade show"
       *ngIf="albumForm.get('genre').hasError('required') && albumForm.get('genre').touched" i18n>
       El Genero Músical es requerido
     </div>
     <label for="album-recordlbl" i18n>Disquera:</label>
-    <input id="album-recordlbl" type="text" class="form-control" formControlName="recordLabel">
+    <select class="form-control" id="album-recordlbl" formControlName="recordLabel">
+      <option>EMI</option>
+      <option>Sony Music</option>
+      <option>Elektra</option>
+      <option>Fania Records</option>
+    </select>
     <div class="alert alert-danger alert-dismissible fade show"
       *ngIf="albumForm.get('recordLabel').hasError('required') && albumForm.get('recordLabel').touched" i18n>
       Disquera es requerido
