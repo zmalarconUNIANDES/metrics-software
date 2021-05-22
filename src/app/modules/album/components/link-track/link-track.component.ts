@@ -32,7 +32,7 @@ export class LinkTrackComponent implements OnInit {
     this.idAlbum = this.route.snapshot.params.id;
   }
   public cancelForm(): void {
-    this.router.navigateByUrl('/albums/');
+    this.router.navigateByUrl(`/albums/detail/${this.idAlbum}`);
   }
   public AddNewTrack(): void {
     const track: Track = {
@@ -47,7 +47,7 @@ export class LinkTrackComponent implements OnInit {
               track.name,
               $localize`Albúm agregado correctamente`
             );
-            this.router.navigateByUrl('/albums/');
+            this.router.navigateByUrl(`/albums/detail/${this.idAlbum}`);
           } else {
             this.toastr.error(
               $localize`No hemos podido agregar el albúm`,
