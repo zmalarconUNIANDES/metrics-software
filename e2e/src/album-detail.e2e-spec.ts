@@ -1,16 +1,16 @@
-import { AppPage } from './app.po';
+import { AlbumDetailPage } from './album-detail.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Album Detail Page', () => {
+  let page: AlbumDetailPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new AlbumDetailPage();
   });
 
-  it('should display home', () => {
+  it('should album detail', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toContain(' All right Reversed');
+    expect(page.showAlbumDetail()).toContain('Detalle de');
   });
 
   afterEach(async () => {
