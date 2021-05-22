@@ -365,6 +365,68 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="98711c9f60b7ba383f4704012a77d56d0c0e4ffb" datatype="html">
+        <source>Nombre Canción:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a16b29bf38a83a5284e5f878f60e0518b751908" datatype="html">
+        <source>
+      El nombre de la canción es obligatorio
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b828979b9052d7c97db7f54f1c9f084e770b47f5" datatype="html">
+        <source>
+      El nombre de la canción debe ser más largo
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ad1ebd81567c3708f5d0a7c4e02a1901b8dd7308" datatype="html">
+        <source>Tiempo de Duración:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf2a5f4191937ed33f7fa50cc78d2a4809294b0b" datatype="html">
+        <source>
+      Tiempo de Duración es requerido
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Guardar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancelar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="84d6b094acfa14599b772005f63ab52b1cf277cf" datatype="html">
+        <source>Agregar una Nueva Canción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

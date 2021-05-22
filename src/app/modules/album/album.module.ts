@@ -8,6 +8,7 @@ import { CommonsModule } from '@app/commons/commons.module';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 import { AlbumCommentsComponent } from './components/album-comments/album-comments.component';
+import { LinkTrackComponent } from './components/link-track/link-track.component';
 
 const AlbumRouting: Routes = [
   {
@@ -17,11 +18,20 @@ const AlbumRouting: Routes = [
   {
     path: 'detail/:id',
     component: AlbumDetailComponent
+  },
+  {
+    path: 'add-track/:id',
+    component: LinkTrackComponent
   }
 ];
 
 @NgModule({
-  declarations: [AlbumsComponent, AlbumDetailComponent, AlbumCommentsComponent],
+  declarations: [
+    AlbumsComponent,
+    AlbumDetailComponent,
+    AlbumCommentsComponent,
+    LinkTrackComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(AlbumRouting),
