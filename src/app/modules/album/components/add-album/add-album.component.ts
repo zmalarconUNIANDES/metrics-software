@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { AlbumService } from '../../services/album.service';
@@ -14,11 +14,13 @@ export class AddAlbumComponent implements OnInit {
   public albumForm: FormGroup;
   public album: object;
   private subscriptions: Subscription[] = [];
+  private collectorId: string;
   constructor(
     private _formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    private albumServices: AlbumService
+    private albumServices: AlbumService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -30,9 +32,10 @@ export class AddAlbumComponent implements OnInit {
       recordLabel: ['', [Validators.required]],
       releaseDate: ['', Validators.required]
     });
+    this.collectorId = this.route.snapshot.params.collectorid;
   }
   public cancelForm(): void {
-    this.router.navigateByUrl('/albums');
+    this.router.navigateByUrl(`/collectors/${this.collectorId}`);
   }
   public createAlbum(): void {
     this.album = {
@@ -51,7 +54,7 @@ export class AddAlbumComponent implements OnInit {
             this.albumForm.controls.name.value,
             $localize`Albúm agregado correctamente`
           );
-          this.router.navigateByUrl('/albums');
+          this.router.navigateByUrl('/collectors');
         },
         (error) => {
           this.toastr.error(

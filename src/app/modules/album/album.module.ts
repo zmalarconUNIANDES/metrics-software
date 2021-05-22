@@ -18,7 +18,7 @@ const AlbumRouting: Routes = [
     component: AlbumDetailComponent
   },
   {
-    path: 'add-album',
+    path: 'add-album/:collectorid',
     component: AddAlbumComponent
   }
 ];
