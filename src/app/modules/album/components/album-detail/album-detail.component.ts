@@ -3,7 +3,7 @@ import { AlbumService } from '@modules/album/services/album.service';
 import { Album } from '@modules/album/album.interface';
 import { Subscription } from 'rxjs';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-album-detail',
@@ -16,7 +16,8 @@ export class AlbumDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private albumService: AlbumService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,5 +30,9 @@ export class AlbumDetailComponent implements OnInit, OnDestroy {
   // tslint:disable-next-line: typedef
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  addTrack(): void {
+    this.router.navigateByUrl(`/albums/add-track/${this.album.id}`);
   }
 }

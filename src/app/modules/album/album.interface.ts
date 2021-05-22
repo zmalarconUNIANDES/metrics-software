@@ -8,7 +8,7 @@ export interface Album {
   recordLabel: string;
   tracks: Array<T>;
   performers: Array<P>;
-  comments: Array<C>;
+  comments: Array<Comments>;
 }
 
 interface T {
@@ -25,8 +25,12 @@ interface P {
   birthDate: string;
 }
 
-interface C {
-  id: number;
+export interface Comments {
+  id?: number;
   description: string;
   rating: number;
+}
+export interface Track {
+  name: string;
+  duration: string;
 }

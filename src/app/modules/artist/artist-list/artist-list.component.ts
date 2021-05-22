@@ -8,16 +8,24 @@ import { ArtistService } from '../service/artist.service';
   styleUrls: ['./artist-list.component.scss']
 })
 export class ArtistListComponent implements OnInit {
-  public artists: Artist[];
+  public musicians: Artist[];
+  public bands: Artist[];
   constructor(private artistService: ArtistService) {}
 
   ngOnInit(): void {
     this.fetchArtist();
+    this.fetchBand();
   }
 
   private fetchArtist(): void {
     this.artistService
       .fetchArtists()
-      .subscribe((artists: Artist[]) => (this.artists = artists));
+      .subscribe((musicians: Artist[]) => (this.musicians = musicians));
+  }
+
+  private fetchBand(): void {
+    this.artistService
+      .fetchBands()
+      .subscribe((bands: Artist[]) => (this.bands = bands));
   }
 }

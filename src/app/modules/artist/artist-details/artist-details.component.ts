@@ -10,11 +10,19 @@ import { ArtistService } from '../service/artist.service';
 })
 export class ArtistDetailsComponent implements OnInit {
   public artist: Artist;
+  public isBand: boolean = false;
   constructor(private service: ArtistService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.service
-      .getArtistById(this.route.snapshot.params.id)
-      .subscribe((artist: Artist) => (this.artist = artist));
+    if (this.route.snapshot.url.length > 1) {
+      this.isBand = true;
+      this.service
+        .getBandById(this.route.snapshot.params.id)
+        .subscribe((artist: Artist) => (this.artist = artist));
+    } else {
+      this.service
+        .getArtistById(this.route.snapshot.params.id)
+        .subscribe((artist: Artist) => (this.artist = artist));
+    }
   }
 }

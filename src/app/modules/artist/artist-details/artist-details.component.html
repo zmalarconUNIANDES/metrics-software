@@ -12,15 +12,14 @@
       <p class="font-weight-bold" *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</p>
     </div>
   </div>
-  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapse-music-info"><h2>Información Musical</h2></div>
+  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapse-music-info"><h2> Información Musical</h2></div>
   <div class="row align-items-start h-50 collapse" id="collapse-music-info">
-      <div class="col-8">
+    <div class="col-12">
       <div class="row">
           <h2 class="pl-3">Albumes</h2>
       </div>
       <div class="row">
-          <div *ngFor="let album of artist.albums" class="col-sm-4"
-             [routerLink]="['/albums', album.id]">
+        <div *ngFor="let album of artist.albums" class="col-sm-4" [routerLink]="['/albums', album.id]">
           <div class="card">
             <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
             <h4 class="card-text">{{ album.name }}</h4>
@@ -28,16 +27,12 @@
         </div>
       </div>
     </div>
-      <div class="col-4">
-        <div class="row"><h2>Top 5</h2></div>
-      <div *ngFor="let album of artist.albums" class="row"
-           [routerLink]="['/albums', album.id]">
-        <div class="card">
-          <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
-          <h4 class="card-text">{{ album.name }}</h4>
-          <p class="card-text">{{artist.name}}</p>
-        </div>
-      </div>
+  </div>
+
+  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-musicians-info" daria-expanded="true" aria-controls="collapse-musicians-info" *ngIf="isBand"><h2 i18n>Integrantes</h2></div>
+  <div class="row align-items-start h-50 collapse" id="collapse-musicians-info">
+    <div class="col-12">
+      <app-artist-musician-band [musicians]="artist.musicians" [bandId]="artist.id"></app-artist-musician-band>
     </div>
   </div>
 </div>

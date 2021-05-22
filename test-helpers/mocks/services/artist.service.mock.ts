@@ -12,6 +12,10 @@ export class ArtistServiceMock {
     return of(artists);
   }
 
+  public fetchBands(): Observable<Artist[]> {
+    return of(artists);
+  }
+
   public getArtistById(id: string): Observable<Artist> {
     return of(artists[0]);
   }

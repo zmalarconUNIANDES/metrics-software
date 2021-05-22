@@ -26,7 +26,7 @@ describe('CollectorAddComponent', () => {
     'fetchArtists'
   ]);
 
-  const toastrServiceSpy = jasmine.createSpyObj('ArtistService', [
+  const toastrServiceSpy = jasmine.createSpyObj('ToastrService', [
     'success',
     'error'
   ]);

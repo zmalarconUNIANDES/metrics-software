@@ -5,6 +5,8 @@ import { of } from 'rxjs';
 import { AlbumDetailComponent } from './album-detail.component';
 
 import { AlbumService } from '../../services/album.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TestComponent } from '@testing/component/test.component';
 
 describe('AlbumDetailComponent', () => {
   let component: AlbumDetailComponent;
@@ -17,7 +19,12 @@ describe('AlbumDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [
+        RouterTestingModule.withRoutes([
+          { path: 'albums/', component: TestComponent }
+        ]),
+        HttpClientTestingModule
+      ],
       declarations: [AlbumDetailComponent],
       providers: [
         {
