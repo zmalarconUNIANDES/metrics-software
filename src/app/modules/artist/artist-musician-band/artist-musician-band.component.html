@@ -1,4 +1,4 @@
-<div class="card p-2 w-100" *ngFor="let artist of musicians">
+<div class="card p-2 w-100 musician" *ngFor="let artist of musicians">
     <div class="row">
         <div class="col-1">
             <figure class="thumbnail">
@@ -26,12 +26,13 @@
             <form [formGroup]="artistForm">
                 <div class="inputContainer">
                     <label i18n>Músico:</label>
-                    <select formControlName="artist" class="form-control">
+                    <select formControlName="artist" id="artist" class="form-control">
                         <option *ngFor="let artist of artists" [value]="artist.id">{{artist.name}}</option>
                     </select>
                 </div>
                 <div class="inputContainer">
                     <button type="button"
+                        id="btnAddMusician"
                         class="btn btn-success"
                         (click)="addMusician()"
                         [disabled]="artistForm.invalid">

@@ -1,16 +1,22 @@
-import { AppPage } from './app.po';
+import { AlbumCommentPage } from './album-comment.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Add Album Comment', () => {
+  let page: AlbumCommentPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new AlbumCommentPage();
   });
 
-  it('should display home', () => {
+  it('should album comment addition', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toContain(' All right Reversed');
+    page.clickListComment();
+    page.setCollector();
+    page.setDescription('test comment');
+    page.setRating(5);
+    page.clickAddNewComment();
+
+    expect(page.getCommentList()).toContain('test comment');
   });
 
   afterEach(async () => {

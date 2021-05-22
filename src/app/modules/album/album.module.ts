@@ -8,7 +8,6 @@ import { CommonsModule } from '@app/commons/commons.module';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 import { AddAlbumComponent } from './components/add-album/add-album.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlbumCommentsComponent } from './components/album-comments/album-comments.component';
 import { LinkTrackComponent } from './components/link-track/link-track.component';
 

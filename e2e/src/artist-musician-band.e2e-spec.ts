@@ -1,16 +1,19 @@
-import { AppPage } from './app.po';
+import { ArtistMusicianBandPage } from './artist-musician-band.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Add Musician Band', () => {
+  let page: ArtistMusicianBandPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new ArtistMusicianBandPage();
   });
 
-  it('should display home', () => {
+  it('should musician band addition', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toContain(' All right Reversed');
+    page.setMusician();
+    page.clickAddMusician();
+
+    expect(page.getMusicianList()).toContain('Rubén');
   });
 
   afterEach(async () => {
