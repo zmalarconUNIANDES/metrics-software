@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { Collector } from '@modules/collectors/entities/colllector.interface';
 import {
@@ -26,7 +26,8 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private toastr: ToastrService,
     private service: CollectorService,
-    private albumsService: AlbumService
+    private albumsService: AlbumService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -104,6 +105,10 @@ export class CollectorDetailComponent implements OnInit, OnDestroy {
         .getAlbums()
         .subscribe((albums: Album[]) => (this.albums = albums))
     );
+  }
+
+  public addAlbum(): void {
+    this.router.navigateByUrl(`/albums/add-album/${this.collector.id}`);
   }
 
   get id(): string {
