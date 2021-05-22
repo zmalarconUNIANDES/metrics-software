@@ -27,7 +27,7 @@ export class AlbumService {
 
     return this.http.post<void>(url, albumInfo);
   }
-  
+
   addComments(albumId: number, comments: any): Observable<void> {
     const url = urlBuilder.services(ENV.api.services.comments, {
       albumId
