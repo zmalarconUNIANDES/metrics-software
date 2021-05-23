@@ -1,18 +1,15 @@
 import { browser, by, element } from 'protractor';
 
 export class CollectorAddMusicianPage {
-  // tslint:disable-next-line: typedef
-  navigateTo() {
+  navigateTo(): any {
     return browser.get(browser.baseUrl + '/collectors/100/add') as Promise<any>;
   }
 
-  // tslint:disable-next-line: typedef
-  clickFirstArtistButton() {
+  clickFirstArtistButton(): void {
     element(by.id('collector-add-button-0')).click();
   }
 
-  // tslint:disable-next-line: typedef
-  getArtistName() {
+  getArtistName(): any {
     return element
       .all(by.css('.favourite-artists .card .card-title'))
       .last()

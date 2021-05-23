@@ -1,13 +1,11 @@
 import { browser, by, element } from 'protractor';
 
 export class CollectorPage {
-  // tslint:disable-next-line: typedef
-  navigateTo() {
+  navigateTo(): any {
     return browser.get(browser.baseUrl + '/collectors') as Promise<any>;
   }
 
-  // tslint:disable-next-line: typedef
-  getCollectorList() {
+  getCollectorList(): any {
     return element
       .all(by.css('.container-collector .card-title'))
       .last()
