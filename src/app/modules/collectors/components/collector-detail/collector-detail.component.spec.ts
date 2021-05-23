@@ -13,6 +13,7 @@ import { AlbumFactory } from '@testing/factories/album.factory';
 import { Artist } from '@modules/artist/entities/artist.interface';
 import { ArtistFactory } from '@testing/factories/artist.factory';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestComponent } from '@testing/component/test.component';
 
 const album: Album = new AlbumFactory().create();
 const albums: Album[] = new AlbumFactory().createBulk(4);
@@ -43,7 +44,12 @@ describe('CollectorDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([
+          { path: 'albums/add-album/:collectorid', component: TestComponent }
+        ])
+      ],
       declarations: [CollectorDetailComponent],
       providers: [
         {
@@ -247,5 +253,9 @@ describe('CollectorDetailComponent', () => {
     component.albums = null;
     fixture.detectChanges();
     expect(component.searchAlbumDetail(album.id)).toBeNull();
+  });
+
+  it('should redirect to add album', () => {
+    fixture.ngZone.run(() => expect(component.addAlbum()).toBeUndefined());
   });
 });
