@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AlbumService } from '../../services/album.service';
 import { CollectorService } from '@modules/collectors/services/collector.service';
 import { AlbumCommentsComponent } from './album-comments.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AlbumCommentsComponent', () => {
   let component: AlbumCommentsComponent;
@@ -30,7 +31,7 @@ describe('AlbumCommentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, ReactiveFormsModule],
       declarations: [AlbumCommentsComponent],
       providers: [
         {

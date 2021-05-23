@@ -10,6 +10,7 @@ import { AlbumDetailComponent } from './components/album-detail/album-detail.com
 import { AddAlbumComponent } from './components/add-album/add-album.component';
 import { AlbumCommentsComponent } from './components/album-comments/album-comments.component';
 import { LinkTrackComponent } from './components/link-track/link-track.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const AlbumRouting: Routes = [
   {

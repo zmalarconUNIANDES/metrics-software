@@ -12,11 +12,13 @@ describe('Add Album Comment', () => {
     page.navigateTo();
     page.clickListComment();
     page.setCollector();
-    page.setDescription('test comment');
+    page.setDescription('The most relevant album of Ruben Blades');
     page.setRating(5);
     page.clickAddNewComment();
 
-    expect(page.getCommentList()).toContain('test comment');
+    expect(page.getCommentList()).toContain(
+      'The most relevant album of Ruben Blades'
+    );
   });
 
   afterEach(async () => {

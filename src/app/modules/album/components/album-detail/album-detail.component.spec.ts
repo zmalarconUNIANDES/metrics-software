@@ -7,6 +7,7 @@ import { AlbumDetailComponent } from './album-detail.component';
 import { AlbumService } from '../../services/album.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestComponent } from '@testing/component/test.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AlbumDetailComponent', () => {
   let component: AlbumDetailComponent;
@@ -39,7 +40,8 @@ describe('AlbumDetailComponent', () => {
             }
           }
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

@@ -6,6 +6,7 @@ import { TestingModule } from '@testing/testing.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('CollectorsComponent', () => {
   let component: CollectorsComponent;
@@ -28,7 +29,8 @@ describe('CollectorsComponent', () => {
           provide: CollectorService,
           useValue: collectorServiceSpy
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

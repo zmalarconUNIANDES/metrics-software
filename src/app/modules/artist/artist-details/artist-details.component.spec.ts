@@ -5,6 +5,7 @@ import { TestingModule } from '@testing/testing.module';
 import { ArtistService } from '../service/artist.service';
 
 import { ArtistDetailsComponent } from './artist-details.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('ArtistDetailsComponent', () => {
   let component: ArtistDetailsComponent;
@@ -19,7 +20,8 @@ describe('ArtistDetailsComponent', () => {
           provide: ArtistService,
           useClass: ArtistServiceMock
         }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

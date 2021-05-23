@@ -64,7 +64,7 @@
         class="bi-plus-circle-fill mr-3"></em>Agregar
       </button>
     </div>
-    <div class="row" *ngIf="albums">
+    <div class="row collector-albums" *ngIf="albums">
       <div *ngFor="let album of collector.collectorAlbums" class="col col-sm-12 col-md-6 col-lg-3 card-item-container">
         <app-album-item [routerLink]="['/album', album.id]" [album]="searchAlbumDetail(album.id)"></app-album-item>
         <em (click)="removeAlbumToFavorites(album.id)" class="bi-trash-fill trash-button"></em>
@@ -79,7 +79,7 @@
         class="bi-plus-circle-fill mr-3"></em>Agregar
       </button>
     </div>
-    <div class="row">
+    <div class="row favourite-artists">
       <div *ngFor="let performer of collector.favoritePerformers"
            class="col-sm-12 col-md-4 col-lg-3 mb-2 card-item-container">
         <div class="card" [routerLink]="['/artists', performer.id]">
