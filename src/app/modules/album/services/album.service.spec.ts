@@ -97,6 +97,26 @@ describe('AlbumService', () => {
     expect(req.request.method).toBe('GET');
   });
 
+  it('should provide addNewAlbum', () => {
+    const url = urlBuilder.services(ENV.api.services.albums);
+    const albumInfo = {
+      name: 'Yellow',
+      cover: 'imagen',
+      releaseDate: '2000-01-01',
+      description: 'un buen album',
+      genre: 'rock',
+      recordLabel: 'recodlabel'
+    };
+    // tslint:disable-next-line: deprecation
+    service.addNewAlbum(albumInfo).subscribe((album) => {
+      expect(album).not.toBe(null);
+    });
+    const req = httpMock.expectOne(url);
+
+    req.flush(mockAlbum);
+    expect(req.request.method).toBe('POST');
+  });
+
   it('should provide addComments', () => {
     const albumId = 100;
     const comments = [
