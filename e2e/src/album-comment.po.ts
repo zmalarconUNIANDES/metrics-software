@@ -1,38 +1,34 @@
 import { browser, by, element } from 'protractor';
 
 export class AlbumCommentPage {
-  // tslint:disable-next-line: typedef
-  navigateTo() {
+  navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl + '/albums/detail/100') as Promise<any>;
   }
 
-  // tslint:disable-next-line: typedef
-  setCollector() {
+  setCollector(): void {
     element(by.css('select option:nth-child(1)')).click();
   }
 
-  // tslint:disable-next-line: typedef
-  setDescription(text: string) {
+  setDescription(text: string): void {
     element(by.id('description')).sendKeys(text);
   }
 
-  // tslint:disable-next-line: typedef
-  setRating(rating: number) {
+  setRating(rating: number): void {
     element(by.id('rating')).sendKeys(rating);
   }
 
-  // tslint:disable-next-line: typedef
-  clickAddNewComment() {
+  clickAddNewComment(): void {
     element(by.id('btnAddNewComment')).click();
   }
 
-  // tslint:disable-next-line: typedef
-  clickListComment() {
+  clickListComment(): void {
     element(by.id('comments-list')).click();
   }
 
-  // tslint:disable-next-line: typedef
-  getCommentList() {
-    return element.all(by.css('.forum-item .comment-post p')).last().getText();
+  getCommentList(): Promise<string> {
+    return element
+      .all(by.css('.forum-item .comment-post p'))
+      .last()
+      .getText() as Promise<string>;
   }
 }

@@ -1,13 +1,14 @@
 import { browser, by, element } from 'protractor';
 
 export class AlbumPage {
-  // tslint:disable-next-line: typedef
-  navigateTo() {
+  navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl + '/albums') as Promise<any>;
   }
 
-  // tslint:disable-next-line: typedef
-  getAlbumsList() {
-    return element.all(by.css('.albums app-album-item div')).last().getText();
+  getAlbumsList(): Promise<string> {
+    return element
+      .all(by.css('.albums app-album-item div'))
+      .last()
+      .getText() as Promise<string>;
   }
 }
