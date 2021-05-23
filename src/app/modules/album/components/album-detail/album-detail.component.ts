@@ -23,12 +23,10 @@ export class AlbumDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.albumService
       .getAlbumById(this.route.snapshot.params.id)
-      // tslint:disable-next-line: deprecation
       .subscribe((album: Album) => (this.album = album));
   }
 
-  // tslint:disable-next-line: typedef
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 

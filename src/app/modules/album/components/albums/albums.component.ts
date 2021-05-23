@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlbumService } from '@modules/album/services/album.service';
 import { Album } from '@modules/album/album.interface';
 import { Subscription } from 'rxjs';
@@ -17,12 +17,10 @@ export class AlbumsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.albumService
       .getAlbums()
-      // tslint:disable-next-line: deprecation
       .subscribe((albums: Album[]) => (this.albums = albums));
   }
 
-  // tslint:disable-next-line: typedef
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }

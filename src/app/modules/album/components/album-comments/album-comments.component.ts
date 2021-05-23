@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { removeSubscriptions } from '@app/commons/utils/util';
@@ -21,8 +21,7 @@ export class AlbumCommentsComponent implements OnInit, OnDestroy {
   @Input() comments: Comments[];
   @Input() idAlbum: number;
 
-  // tslint:disable-next-line: typedef
-  feedbackForm = new FormGroup({
+  feedbackForm: FormGroup = new FormGroup({
     collector: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     rating: new FormControl(0, Validators.min(1))
@@ -42,8 +41,7 @@ export class AlbumCommentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  // tslint:disable-next-line: typedef
-  addNewComment() {
+  addNewComment(): void {
     this.subscriptions.push(
       this.albumService
         .addComments(this.idAlbum, {
