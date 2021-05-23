@@ -5,6 +5,7 @@ import { of, throwError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { ArtistService } from '../service/artist.service';
 import { ArtistMusicianBandComponent } from './artist-musician-band.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ArtistMusicianBandComponent', () => {
   let component: ArtistMusicianBandComponent;
@@ -27,7 +28,7 @@ describe('ArtistMusicianBandComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule],
       declarations: [ArtistMusicianBandComponent],
       providers: [
         {
