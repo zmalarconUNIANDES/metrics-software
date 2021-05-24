@@ -25,7 +25,7 @@
             <div class="w-100 head-collapse card-header" data-toggle="collapse" data-target="#collapseTraks" daria-expanded="true" aria-controls="collapseTraks"><h5>Ver listado de canciones</h5></div>
             <div class="collapse" id="collapseTraks">
                 <div>
-                  <button class="btn pull-right btn-success m-2" (click)="addTrack()" >Add New Track</button>
+                  <button id="btn-add-track" class="btn pull-right btn-success m-2" (click)="addTrack()" >Add New Track</button>
                 </div>
                 <div class="forum-item active card p-2 w-100">
                     <div class="row" *ngIf="album.tracks && album.tracks.length === 0">
