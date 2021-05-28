@@ -1,27 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { Track } from '../../album.interface';
 import { AlbumService } from '../../services/album.service';
+import { removeSubscriptions } from '@app/commons/utils/util';
 
 @Component({
   selector: 'app-link-track',
   templateUrl: './link-track.component.html',
   styleUrls: ['./link-track.component.scss']
 })
-export class LinkTrackComponent implements OnInit {
+export class LinkTrackComponent implements OnInit, OnDestroy {
   public trackForm: FormGroup;
   public album: object;
-  private subscriptions: Subscription[] = [];
   public idAlbum: string;
+
+  private subscriptions: Subscription[] = [];
+
   constructor(
-    private _formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
+    private route: ActivatedRoute,
     private albumServices: AlbumService,
-    private route: ActivatedRoute
+    private _formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
@@ -31,10 +34,16 @@ export class LinkTrackComponent implements OnInit {
     });
     this.idAlbum = this.route.snapshot.params.id;
   }
+
+  ngOnDestroy(): void {
+    removeSubscriptions(this.subscriptions);
+  }
+
   public cancelForm(): void {
     this.router.navigateByUrl(`/albums/detail/${this.idAlbum}`);
   }
-  public AddNewTrack(): void {
+
+  public addNewTrack(): void {
     const track: Track = {
       name: this.trackForm.controls.name.value,
       duration: this.trackForm.controls.duration.value

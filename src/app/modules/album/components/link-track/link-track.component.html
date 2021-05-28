@@ -1,6 +1,6 @@
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
   <h1 i18n>Add new Track</h1>
-  <form [formGroup]="trackForm" (ngSubmit)="!trackForm.invalid && AddNewTrack()">
+  <form [formGroup]="trackForm" (ngSubmit)="!trackForm.invalid && addNewTrack()">
     <label for="track-name" i18n>Name Track:</label>
     <input id="track-name" type="text" class="form-control" formControlName="name">
     <div class="alert alert-danger alert-dismissible fade show"

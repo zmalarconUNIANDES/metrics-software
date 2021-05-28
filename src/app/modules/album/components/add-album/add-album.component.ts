@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { AlbumService } from '../../services/album.service';
+import { removeSubscriptions } from '@app/commons/utils/util';
 
 @Component({
   selector: 'app-add-album',
   templateUrl: './add-album.component.html',
   styleUrls: ['./add-album.component.scss']
 })
-export class AddAlbumComponent implements OnInit {
+export class AddAlbumComponent implements OnInit, OnDestroy {
   public albumForm: FormGroup;
   public album: object;
-  private subscriptions: Subscription[] = [];
   private collectorId: string;
+
+  private subscriptions: Subscription[] = [];
+
   constructor(
     private _formBuilder: FormBuilder,
     private router: Router,
@@ -34,9 +37,15 @@ export class AddAlbumComponent implements OnInit {
     });
     this.collectorId = this.route.snapshot.params.collectorid;
   }
+
+  ngOnDestroy(): void {
+    removeSubscriptions(this.subscriptions);
+  }
+
   public cancelForm(): void {
     this.router.navigateByUrl(`/collectors/${this.collectorId}`);
   }
+
   public createAlbum(): void {
     this.album = {
       name: this.albumForm.controls.name.value,
