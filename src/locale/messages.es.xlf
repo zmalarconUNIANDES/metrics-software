@@ -129,7 +129,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6f33497cfe8fc93b190aa7b65f9544359e062173" datatype="html">
@@ -150,7 +150,7 @@
         <source>No hay detalle para este álbum</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-detail/album-detail.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d25edf8c2543dbf27bde024706b28e186115b0e6" datatype="html">
@@ -159,42 +159,226 @@
                         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-detail/album-detail.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c01abbdcf30c2b4ff99aeeed54c399370b3f7cfd" datatype="html">
         <source>Duración</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-detail/album-detail.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4e7d41e10a13647647d3aeb44a7531167783fa97" datatype="html">
-        <source>No existen comentarios</source>
+        <source>
+                No existen comentarios
+            </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
           <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4ab8fdfeadab87d0779d58cceb77ce50aa5ec61b" datatype="html">
-        <source>Descripción:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="bbfbe3dd56a9a4bad8579f714628747c61229810" datatype="html">
-        <source>¿Cómo calificarías este álbum?</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ecca6cef600cd69326bd4395b09b09c0cdf9e5fb" datatype="html">
         <source>Coleccionista:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ab8fdfeadab87d0779d58cceb77ce50aa5ec61b" datatype="html">
+        <source>Descripción:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bbfbe3dd56a9a4bad8579f714628747c61229810" datatype="html">
+        <source>¿Cómo calificarías este álbum?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/album-comments/album-comments.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="caa8256d0f4e9a23669ff125d18bedac76073876" datatype="html">
+        <source>Agregar un nuevo Album</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3e11c1e8353cb9b9fa590711d1e768792b1b2b03" datatype="html">
+        <source>Nombre del Album:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a4a0928a71bd3041709af1ebd23362335bd42b43" datatype="html">
+        <source>
+      Nombre Obligatorio
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6c015a50f4382f21e1201ebe89badf45d52b6b32" datatype="html">
+        <source>
+      El nombre debe ser más largo
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="954ed7f214cf07f5c95dd47a8dbe08d231a38ce9" datatype="html">
+        <source>Cover:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="687363c46e7f1ed3e09701da5c24e91ef22c6a4c" datatype="html">
+        <source>
+      URL Cover es obligatorio
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28d00e5dce8834b29addda7bb63bb3b04f84b521" datatype="html">
+        <source>Fecha Lanzamiento:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b2cae901117ed0a35358d4630b81af871e55833" datatype="html">
+        <source>
+      Fecha de lanzamiento es obligatoria
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae25747f78574f008e057a88679673de0c259f0e" datatype="html">
+        <source>
+      La descripción es obligatoria
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7feb922890b279a37a73e852eea354ae9a081bde" datatype="html">
+        <source>Género Musical:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1519c6bd53b1a5ccd79fb85f93a7681afb1a15ae" datatype="html">
+        <source>
+      El Genero Músical es requerido
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80f2bd65a6a6ada7f0105ebdd2f612722ccff012" datatype="html">
+        <source>Disquera:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e10aec9af72ca44ab08cba57e2f28c8037676648" datatype="html">
+        <source>
+      Disquera es requerido
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6943588fb2c336651c23e60f0c146379ad49a0a4" datatype="html">
+        <source>Guardar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="84d6b094acfa14599b772005f63ab52b1cf277cf" datatype="html">
+        <source>Add new Track</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98711c9f60b7ba383f4704012a77d56d0c0e4ffb" datatype="html">
+        <source>Name Track:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a16b29bf38a83a5284e5f878f60e0518b751908" datatype="html">
+        <source>
+      Track Name required
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b828979b9052d7c97db7f54f1c9f084e770b47f5" datatype="html">
+        <source>
+      Track Name should be longer
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ad1ebd81567c3708f5d0a7c4e02a1901b8dd7308" datatype="html">
+        <source>Track Duration:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cf2a5f4191937ed33f7fa50cc78d2a4809294b0b" datatype="html">
+        <source>
+      Duration is required
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7b58538b1dd31df6643c09049be1550edbc8641e" datatype="html">
@@ -287,23 +471,44 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="afa21e5dbdd223b08c2ea0f5739552b53715b117" datatype="html">
+        <source>Agregar Nuevo Album</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="301218cac9ea0b1e51b36626f8eb25fdfb9e9164" datatype="html">
         <source><x id="START_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;em&gt;"/><x id="CLOSE_EMPHASISED_TEXT" ctype="x-em" equiv-text="&lt;/em&gt;"/>Agregar
       </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">63</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f08b0f1ce3f57e40d6d91baf2b9344addcbcb329" datatype="html">
         <source>Artistas favoritos</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f557c805d8f762e54ebbf66066ff34e0635a53bb" datatype="html">
+        <source>Integrantes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-details/artist-details.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7a7ec7e5ff7ff24a5c02515a38009a4b436505f" datatype="html">
+        <source>Músico:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/artist/artist-musician-band/artist-musician-band.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6607428373160578597">
@@ -339,226 +544,17 @@
       <trans-unit id="5140427608194898979">
         <source>Ha ocurrido un error</source>
       </trans-unit>
+      <trans-unit id="7836066765127305758">
+        <source>Músico agregado correctamente</source>
+      </trans-unit>
+      <trans-unit id="3027149824146283512">
+       <source>No se ha agregado el músico</source>
+      </trans-unit>
       <trans-unit id="5743596521088502094">
         <source>Comentario agregado correctamente</source>
       </trans-unit>
       <trans-unit id="4422314869727473878">
         <source>No se ha agregado el comentario</source>
-      </trans-unit>
-      <trans-unit id="7836066765127305758">
-        <source>Músico agregado correctamente</source>
-      </trans-unit>
-      <trans-unit id="3027149824146283512">
-        <source>No se ha agregado el músico</source>
-      </trans-unit>
-      <trans-unit id="f557c805d8f762e54ebbf66066ff34e0635a53bb" datatype="html">
-        <source>Integrantes</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/artist/artist-details/artist-details.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d7a7ec7e5ff7ff24a5c02515a38009a4b436505f" datatype="html">
-        <source>Músico:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/artist/artist-musician-band/artist-musician-band.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="98711c9f60b7ba383f4704012a77d56d0c0e4ffb" datatype="html">
-        <source>Nombre Canción:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0a16b29bf38a83a5284e5f878f60e0518b751908" datatype="html">
-        <source>
-      El nombre de la canción es obligatorio
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b828979b9052d7c97db7f54f1c9f084e770b47f5" datatype="html">
-        <source>
-      El nombre de la canción debe ser más largo
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ad1ebd81567c3708f5d0a7c4e02a1901b8dd7308" datatype="html">
-        <source>Tiempo de Duración:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="cf2a5f4191937ed33f7fa50cc78d2a4809294b0b" datatype="html">
-        <source>
-      Tiempo de Duración es requerido
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
-        <source>Guardar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
-        <source>Cancelar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-       <trans-unit id="84d6b094acfa14599b772005f63ab52b1cf277cf" datatype="html">
-        <source>Agregar una Nueva Canción</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/link-track/link-track.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-       <trans-unit id="caa8256d0f4e9a23669ff125d18bedac76073876" datatype="html">
-        <source>Agregar un nuevo Album</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3e11c1e8353cb9b9fa590711d1e768792b1b2b03" datatype="html">
-        <source>Nombre del Album:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="a4a0928a71bd3041709af1ebd23362335bd42b43" datatype="html">
-        <source>
-      Nombre Obligatorio
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6c015a50f4382f21e1201ebe89badf45d52b6b32" datatype="html">
-        <source>
-      El nombre debe ser más largo
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="954ed7f214cf07f5c95dd47a8dbe08d231a38ce9" datatype="html">
-        <source>Cover:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="687363c46e7f1ed3e09701da5c24e91ef22c6a4c" datatype="html">
-        <source>
-      URL Cover es obligatorio
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="28d00e5dce8834b29addda7bb63bb3b04f84b521" datatype="html">
-        <source>Fecha Lanzamiento:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4b2cae901117ed0a35358d4630b81af871e55833" datatype="html">
-        <source>
-      Fecha de lanzamiento es obligatoria
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4ab8fdfeadab87d0779d58cceb77ce50aa5ec61b" datatype="html">
-        <source>Descripción:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ae25747f78574f008e057a88679673de0c259f0e" datatype="html">
-        <source>
-      La descripción es obligatoria
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7feb922890b279a37a73e852eea354ae9a081bde" datatype="html">
-        <source>Género Musical:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">36</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1519c6bd53b1a5ccd79fb85f93a7681afb1a15ae" datatype="html">
-        <source>
-      El Genero Músical es requerido
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="80f2bd65a6a6ada7f0105ebdd2f612722ccff012" datatype="html">
-        <source>Disquera:</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="e10aec9af72ca44ab08cba57e2f28c8037676648" datatype="html">
-        <source>
-      Disquera es requerido
-    </source>
-              <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6943588fb2c336651c23e60f0c146379ad49a0a4" datatype="html">
-        <source>Guardar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
-        <source>Cancelar</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/album/components/add-album/add-album.component.html</context>
-          <context context-type="linenumber">50</context>
-        </context-group>
-      </trans-unit>
-    <trans-unit id="afa21e5dbdd223b08c2ea0f5739552b53715b117" datatype="html">
-        <source>Agregar Nuevo Album</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/collectors/components/collector-detail/collector-detail.component.html</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
       </trans-unit>
     </body>
   </file>
