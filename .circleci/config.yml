@@ -1,7 +1,7 @@
 jobs:
   build:
     docker:
-      - image: mhart/alpine-node:14
+      - image: 'node:14'
     steps:
       - checkout
       - run:
