@@ -1,108 +1,108 @@
 <testExecutions version="1">
-  <file path="src/app/modules/album/components/albums/albums.component.spec.ts">
-    <testCase name="AlbumsComponent should create" duration="35"/>
-  </file>
-  <file path="src/app/modules/artist/artist-list/artist-list.component.spec.ts">
-    <testCase name="ArtistListComponent should create" duration="61"/>
-  </file>
-  <file path="src/app/modules/album/components/link-track/link-track.component.spec.ts">
-    <testCase name="LinkTrackComponent should generate error on add new track" duration="16"/>
-    <testCase name="LinkTrackComponent should add new track" duration="3"/>
-    <testCase name="LinkTrackComponent should cancel form" duration="6"/>
-    <testCase name="LinkTrackComponent should create" duration="2"/>
-  </file>
-  <file path="src/app/modules/artist/artist-details/artist-details.component.spec.ts">
-    <testCase name="ArtistDetailsComponent should create" duration="11"/>
-  </file>
-  <file path="src/app/modules/album/components/album-detail/album-detail.component.spec.ts">
-    <testCase name="AlbumDetailComponent should redirect to add track" duration="11"/>
-    <testCase name="AlbumDetailComponent should create" duration="3"/>
-  </file>
-  <file path="src/app/modules/artist/service/artist.service.spec.ts">
-    <testCase name="ArtistService should to call fetch Band" duration="2"/>
-    <testCase name="ArtistService should provide addMusicians" duration="1"/>
-    <testCase name="ArtistService should be created" duration="1"/>
-    <testCase name="ArtistService should to call get Artist by ID " duration="1"/>
-    <testCase name="ArtistService should to call fetch Artists" duration="1"/>
-    <testCase name="ArtistService should to call get Band by ID " duration="1"/>
-  </file>
-  <file path="src/app/commons/pipes/image-url.pipe.spec.ts">
-    <testCase name="ImageUrlPipe should be null" duration="1"/>
-    <testCase name="ImageUrlPipe create an instance" duration="1"/>
-    <testCase name="ImageUrlPipe should be correct" duration="1"/>
-  </file>
-  <file path="src/app/modules/artist/artist-musician-band/artist-musician-band.component.spec.ts">
-    <testCase name="ArtistMusicianBandComponent should generate error on add musician to band" duration="8"/>
-    <testCase name="ArtistMusicianBandComponent should create" duration="3"/>
-    <testCase name="ArtistMusicianBandComponent should add musician to band" duration="2"/>
-  </file>
-  <file path="src/app/modules/collectors/components/collector-add/collector-add.component.spec.ts">
-    <testCase name="CollectorAddComponent should generate error on add artist to favorites" duration="6"/>
-    <testCase name="CollectorAddComponent should create" duration="3"/>
-    <testCase name="CollectorAddComponent should add artist to favorites" duration="2"/>
-  </file>
-  <file path="src/app/modules/album/components/add-album/add-album.component.spec.ts">
-    <testCase name="AddAlbumComponent should cancel form" duration="11"/>
-    <testCase name="AddAlbumComponent should generate error on add new album" duration="3"/>
-    <testCase name="AddAlbumComponent should create" duration="3"/>
-    <testCase name="AddAlbumComponent should add new album" duration="3"/>
-  </file>
-  <file path="src/app/modules/collectors/components/collector-add-album/collector-add-album.component.spec.ts">
-    <testCase name="CollectorAddAlbumComponent should generate error on add album to favorites" duration="7"/>
-    <testCase name="CollectorAddAlbumComponent should create" duration="2"/>
-    <testCase name="CollectorAddAlbumComponent should add album to favorites" duration="3"/>
-  </file>
-  <file path="src/app/modules/album/services/album.service.spec.ts">
-    <testCase name="AlbumService should provide addComments" duration="1"/>
-    <testCase name="AlbumService should provide addTrackToAlbum" duration="1"/>
-    <testCase name="AlbumService should provide getAlbumById" duration="1"/>
-    <testCase name="AlbumService should provide addNewAlbum" duration="1"/>
-    <testCase name="AlbumService should provide getAlbums" duration="1"/>
-    <testCase name="AlbumService should be created" duration="1"/>
-  </file>
-  <file path="src/app/modules/layout/layout.component.spec.ts">
-    <testCase name="LayoutComponent should create" duration="1"/>
-  </file>
-  <file path="src/app/modules/collectors/components/collectors/collectors.component.spec.ts">
-    <testCase name="CollectorsComponent should create" duration="4"/>
-  </file>
-  <file path="src/app/commons/components/album-item/album-item.component.spec.ts">
-    <testCase name="AlbumItemComponent should create" duration="5"/>
-  </file>
-  <file path="src/app/modules/collectors/components/collector-detail/collector-detail.component.spec.ts">
-    <testCase name="CollectorDetailComponent should remove album to favorites" duration="11"/>
-    <testCase name="CollectorDetailComponent should search album detail" duration="3"/>
-    <testCase name="CollectorDetailComponent should generate error on add artist to favorites" duration="2"/>
-    <testCase name="CollectorDetailComponent should search album detail to be null" duration="3"/>
-    <testCase name="CollectorDetailComponent should redirect to add album" duration="3"/>
-    <testCase name="CollectorDetailComponent should create" duration="4"/>
-    <testCase name="CollectorDetailComponent should generate error on add album to favorites" duration="3"/>
-    <testCase name="CollectorDetailComponent should remove artist to favorites" duration="2"/>
-  </file>
-  <file path="src/app/modules/layout/components/footer/footer.component.spec.ts">
-    <testCase name="FooterComponent should create" duration="5"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="3"/>
-  </file>
   <file path="src/app/modules/collectors/services/collector.service.spec.ts">
+    <testCase name="CollectorService should to call remove musician" duration="10"/>
+    <testCase name="CollectorService should to call fetch collectors" duration="1"/>
+    <testCase name="CollectorService should to call add musician" duration="2"/>
     <testCase name="CollectorService should to call add album" duration="1"/>
     <testCase name="CollectorService should to call remove album" duration="1"/>
-    <testCase name="CollectorService should to call add musician" duration="1"/>
     <testCase name="CollectorService should be created" duration="1"/>
     <testCase name="CollectorService should to call get collector" duration="1"/>
-    <testCase name="CollectorService should to call remove musician" duration="1"/>
-    <testCase name="CollectorService should to call fetch collectors" duration="1"/>
   </file>
-  <file path="src/app/modules/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="5"/>
+  <file path="src/app/modules/collectors/components/collectors/collectors.component.spec.ts">
+    <testCase name="CollectorsComponent should create" duration="23"/>
+  </file>
+  <file path="src/app/modules/layout/layout.component.spec.ts">
+    <testCase name="LayoutComponent should create" duration="6"/>
   </file>
   <file path="src/app/modules/layout/components/header/header.component.spec.ts">
-    <testCase name="HeaderComponent should create" duration="3"/>
+    <testCase name="HeaderComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/modules/artist/artist-list/artist-list.component.spec.ts">
+    <testCase name="ArtistListComponent should create" duration="9"/>
+  </file>
+  <file path="src/app/modules/artist/service/artist.service.spec.ts">
+    <testCase name="ArtistService should to call fetch Artists" duration="1"/>
+    <testCase name="ArtistService should be created" duration="1"/>
+    <testCase name="ArtistService should to call get Artist by ID " duration="1"/>
+    <testCase name="ArtistService should to call fetch Band" duration="1"/>
+    <testCase name="ArtistService should provide addMusicians" duration="1"/>
+    <testCase name="ArtistService should to call get Band by ID " duration="1"/>
+  </file>
+  <file path="src/app/modules/layout/components/footer/footer.component.spec.ts">
+    <testCase name="FooterComponent should create" duration="7"/>
   </file>
   <file path="src/app/modules/album/components/album-comments/album-comments.component.spec.ts">
-    <testCase name="AlbumCommentsComponent should create" duration="6"/>
+    <testCase name="AlbumCommentsComponent should create" duration="13"/>
+    <testCase name="AlbumCommentsComponent should add comment to album" duration="4"/>
     <testCase name="AlbumCommentsComponent should generate error on add comment" duration="3"/>
-    <testCase name="AlbumCommentsComponent should add comment to album" duration="2"/>
+  </file>
+  <file path="src/app/modules/artist/artist-musician-band/artist-musician-band.component.spec.ts">
+    <testCase name="ArtistMusicianBandComponent should create" duration="6"/>
+    <testCase name="ArtistMusicianBandComponent should add musician to band" duration="2"/>
+    <testCase name="ArtistMusicianBandComponent should generate error on add musician to band" duration="2"/>
+  </file>
+  <file path="src/app/modules/album/components/album-detail/album-detail.component.spec.ts">
+    <testCase name="AlbumDetailComponent should create" duration="8"/>
+    <testCase name="AlbumDetailComponent should redirect to add track" duration="4"/>
+  </file>
+  <file path="src/app/modules/collectors/components/collector-add-album/collector-add-album.component.spec.ts">
+    <testCase name="CollectorAddAlbumComponent should generate error on add album to favorites" duration="4"/>
+    <testCase name="CollectorAddAlbumComponent should add album to favorites" duration="2"/>
+    <testCase name="CollectorAddAlbumComponent should create" duration="2"/>
+  </file>
+  <file path="src/app/modules/album/components/link-track/link-track.component.spec.ts">
+    <testCase name="LinkTrackComponent should generate error on add new track" duration="5"/>
+    <testCase name="LinkTrackComponent should add new track" duration="2"/>
+    <testCase name="LinkTrackComponent should create" duration="2"/>
+    <testCase name="LinkTrackComponent should cancel form" duration="3"/>
+  </file>
+  <file path="src/app/modules/artist/artist-details/artist-details.component.spec.ts">
+    <testCase name="ArtistDetailsComponent should create" duration="3"/>
+  </file>
+  <file path="src/app/modules/album/components/albums/albums.component.spec.ts">
+    <testCase name="AlbumsComponent should create" duration="3"/>
+  </file>
+  <file path="src/app/modules/album/services/album.service.spec.ts">
+    <testCase name="AlbumService should provide getAlbumById" duration="1"/>
+    <testCase name="AlbumService should be created" duration="1"/>
+    <testCase name="AlbumService should provide getAlbums" duration="2"/>
+    <testCase name="AlbumService should provide addNewAlbum" duration="1"/>
+    <testCase name="AlbumService should provide addComments" duration="1"/>
+    <testCase name="AlbumService should provide addTrackToAlbum" duration="1"/>
+  </file>
+  <file path="src/app/modules/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="6"/>
+  </file>
+  <file path="src/app/modules/collectors/components/collector-detail/collector-detail.component.spec.ts">
+    <testCase name="CollectorDetailComponent should generate error on add artist to favorites" duration="15"/>
+    <testCase name="CollectorDetailComponent should search album detail" duration="6"/>
+    <testCase name="CollectorDetailComponent should generate error on add album to favorites" duration="3"/>
+    <testCase name="CollectorDetailComponent should redirect to add album" duration="2"/>
+    <testCase name="CollectorDetailComponent should search album detail to be null" duration="2"/>
+    <testCase name="CollectorDetailComponent should remove artist to favorites" duration="2"/>
+    <testCase name="CollectorDetailComponent should create" duration="2"/>
+    <testCase name="CollectorDetailComponent should remove album to favorites" duration="2"/>
+  </file>
+  <file path="src/app/modules/collectors/components/collector-add/collector-add.component.spec.ts">
+    <testCase name="CollectorAddComponent should generate error on add artist to favorites" duration="4"/>
+    <testCase name="CollectorAddComponent should create" duration="2"/>
+    <testCase name="CollectorAddComponent should add artist to favorites" duration="1"/>
+  </file>
+  <file path="src/app/commons/pipes/image-url.pipe.spec.ts">
+    <testCase name="ImageUrlPipe should be correct" duration="1"/>
+    <testCase name="ImageUrlPipe create an instance" duration="1"/>
+    <testCase name="ImageUrlPipe should be null" duration="1"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="1"/>
+  </file>
+  <file path="src/app/commons/components/album-item/album-item.component.spec.ts">
+    <testCase name="AlbumItemComponent should create" duration="3"/>
+  </file>
+  <file path="src/app/modules/album/components/add-album/add-album.component.spec.ts">
+    <testCase name="AddAlbumComponent should add new album" duration="11"/>
+    <testCase name="AddAlbumComponent should generate error on add new album" duration="4"/>
+    <testCase name="AddAlbumComponent should create" duration="4"/>
+    <testCase name="AddAlbumComponent should cancel form" duration="2"/>
   </file>
 </testExecutions>
