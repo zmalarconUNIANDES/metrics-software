@@ -19,7 +19,7 @@ export class AlbumCommentsComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   @Input() comments: Comments[];
-  @Input() idAlbum: number;
+  @Input() idAlbum: number
 
   feedbackForm: FormGroup = new FormGroup({
     collector: new FormControl('', Validators.required),

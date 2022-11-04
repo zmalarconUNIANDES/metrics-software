@@ -9,6 +9,6 @@ export class ImageUrlPipe implements PipeTransform {
   private baseImg: string = ENV.resources.base_img;
 
   transform(value: string): string {
-    return !isNullOrUndefined(value) ? this.baseImg + value : value;
+    return !isNullOrUndefined(value) ? this.baseImg + value : value
   }
 }

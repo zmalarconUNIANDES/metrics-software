@@ -24,7 +24,8 @@ export class AddAlbumComponent implements OnInit, OnDestroy {
     private toastr: ToastrService,
     private albumServices: AlbumService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.albumForm = this._formBuilder.group({
