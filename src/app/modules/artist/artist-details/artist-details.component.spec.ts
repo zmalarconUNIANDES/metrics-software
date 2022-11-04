@@ -13,10 +13,19 @@ describe('ArtistDetailsComponent', () => {
   let fixture: ComponentFixture<ArtistDetailsComponent>;
 
   const artistServiceSpy = jasmine.createSpyObj('ArtistService', [
-    'getBandById'
+    'getBandById',
+    'getArtistById'
   ]);
 
+  let routeSpy = {
+    snapshot: {
+      url: 'artists/1',
+      params: {}
+    }
+  };
+
   const getBandById = artistServiceSpy.getBandById as jasmine.Spy;
+  const getArtistById = artistServiceSpy.getArtistById as jasmine.Spy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -29,12 +38,7 @@ describe('ArtistDetailsComponent', () => {
         },
         {
           provide: ActivatedRoute,
-          useValue: {
-            snapshot: {
-              url: 'artists/1',
-              params: { id: 100 }
-            }
-          }
+          useValue: routeSpy
         }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -44,6 +48,7 @@ describe('ArtistDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ArtistDetailsComponent);
     component = fixture.componentInstance;
+    component.isBand = false;
     getBandById.and.returnValue(
       of({
         id: 100,
@@ -82,10 +87,60 @@ describe('ArtistDetailsComponent', () => {
         ]
       })
     );
+
+    getArtistById.and.returnValue(
+      of({
+        id: 100,
+        name: 'Rubén Blades Bellido de Luna',
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg',
+        description:
+          'Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.',
+        birthDate: '1948-07-16T00:00:00.000Z',
+        albums: [
+          {
+            id: 100,
+            name: 'Buscando América',
+            cover:
+              'https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg',
+            releaseDate: '1984-08-01T00:00:00.000Z',
+            description:
+              'Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.',
+            genre: 'Salsa',
+            recordLabel: 'Elektra'
+          }
+        ],
+        performerPrizes: [
+          { id: 100, premiationDate: '1978-12-10T00:00:00.000Z' }
+        ]
+      })
+    );
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should ngOnInit url params', () => {
+    routeSpy = {
+      snapshot: {
+        url: 'artists/1',
+        params: { id: 100 }
+      }
+    };
+    component.ngOnInit();
+    expect(component.isBand).toBeTrue();
+  });
+
+  it('should ngOnInit change params', () => {
+    routeSpy = {
+      snapshot: {
+        url: 'artists',
+        params: { id: 100 }
+      }
+    };
+    component.ngOnInit();
+    expect(component.isBand).toBeTrue();
   });
 });

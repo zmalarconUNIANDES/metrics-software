@@ -126,7 +126,7 @@ describe('AlbumsComponent', () => {
     component = null;
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

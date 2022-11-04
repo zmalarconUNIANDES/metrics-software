@@ -170,11 +170,21 @@ describe('ArtistMusicianBandComponent', () => {
         ]
       })
     );
+    toastrSuccess.and.returnValue(() => {});
+    fixture.detectChanges();
     fixture.ngZone.run(() => expect(component.addMusician()).toBeUndefined());
   });
 
   it('should generate error on add musician to band', () => {
-    addMusicians.and.returnValue(throwError({ status: 400, message: 'Error' }));
+    addMusicians.and.returnValue(throwError(new Error('oops!!')));
+    toastrError.and.returnValue(() => {});
+    fixture.detectChanges();
+    fixture.ngZone.run(() => expect(component.addMusician()).toBeUndefined());
+  });
+
+  it('should generate error on add musician to band 500', () => {
+    addMusicians.and.returnValue(throwError({ status: 500, message: 'Error' }));
+    toastrError.and.returnValue(() => {});
     fixture.detectChanges();
     fixture.ngZone.run(() => expect(component.addMusician()).toBeUndefined());
   });

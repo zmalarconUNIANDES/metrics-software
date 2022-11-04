@@ -97,7 +97,7 @@ describe('AlbumService', () => {
     expect(req.request.method).toBe('GET');
   });
 
-  xit('should provide addNewAlbum', () => {
+  it('should provide addNewAlbum', () => {
     const url = urlBuilder.services(ENV.api.services.albums);
     const albumInfo = {
       name: 'Yellow',
@@ -117,7 +117,7 @@ describe('AlbumService', () => {
     expect(req.request.method).toBe('POST');
   });
 
-  xit('should provide addComments', () => {
+  it('should provide addComments', () => {
     const albumId = 100;
     const comments = [
       {
@@ -160,7 +160,7 @@ describe('AlbumService', () => {
     expect(req.request.method).toBe('POST');
   });
 
-  xit('should provide addTrackToAlbum', () => {
+  it('should provide addTrackToAlbum', () => {
     const albumId = '100';
     const track = {
       name: 'The most relevant track',

@@ -58,7 +58,7 @@ export class ArtistMusicianBandComponent implements OnInit, OnDestroy {
           },
           (error) => {
             this.toastr.error(
-              error?.error?.message || $localize`No se ha agregado el músico`,
+              error?.message || $localize`No se ha agregado el músico`,
               $localize`Ha ocurrido un error`
             );
           }

@@ -107,7 +107,7 @@ describe('AlbumDetailComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should redirect to add track', () => {
+  it('should redirect to add track', () => {
     fixture.ngZone.run(() => expect(component.addTrack()).toBeUndefined());
   });
 });
