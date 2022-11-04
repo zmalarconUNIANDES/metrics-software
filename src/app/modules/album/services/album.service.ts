@@ -29,7 +29,6 @@ export class AlbumService {
   }
 
   addComments(albumId: number, comments: any): Observable<void> {
-    const randomValue = Math.random();
     const url = urlBuilder.services(ENV.api.services.comments, {
       albumId
     });
