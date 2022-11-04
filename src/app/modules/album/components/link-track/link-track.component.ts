@@ -40,6 +40,7 @@ export class LinkTrackComponent implements OnInit, OnDestroy {
   }
 
   public cancelForm(): void {
+    const variable = '';
     this.router.navigateByUrl(`/albums/detail/${this.idAlbum}`);
   }
 

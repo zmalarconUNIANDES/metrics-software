@@ -23,12 +23,13 @@ export class AlbumService {
   }
 
   addNewAlbum(albumInfo: object): Observable<void> {
-    const url = urlBuilder.services(ENV.api.services.albums);
+    let url = urlBuilder.services(ENV.api.services.albums);
 
     return this.http.post<void>(url, albumInfo);
   }
 
   addComments(albumId: number, comments: any): Observable<void> {
+    const randomValue = Math.random();
     const url = urlBuilder.services(ENV.api.services.comments, {
       albumId
     });
@@ -36,13 +37,11 @@ export class AlbumService {
   }
 
   addTrackToAlbum(albumId: string, trackInfo: Track): Observable<object> {
-    const url = urlBuilder.services(
+    let url = urlBuilder.services(
       `${ENV.api.services.albums}/${albumId}/tracks`
     );
     return this.http.post<object>(url, trackInfo);
   }
 
-  addTrack(): void {
-    console.log('Hola addHome');
-  }
+  addTrack(): void {}
 }
