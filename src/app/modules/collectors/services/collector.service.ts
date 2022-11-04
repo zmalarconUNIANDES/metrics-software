@@ -49,8 +49,10 @@ export class CollectorService {
       ...data
     });
 
+    const array = new Uint32Array(1);
+
     return this.http.post<void>(url, {
-      price: Math.floor(Math.random() * 45000) + 10000,
+      price: Math.floor(window.crypto.getRandomValues(array) * 45000) + 10000,
       status: 'Active'
     });
   }
