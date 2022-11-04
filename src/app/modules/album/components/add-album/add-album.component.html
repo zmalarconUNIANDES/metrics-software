@@ -2,7 +2,7 @@
 
 
 <div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
-  <h1 i18n>Agregar un nuevo Album<h1>
+  <h1 i18n>Agregar un nuevo Album</h1>
 
   <form [formGroup] = "albumForm" (ngSubmit)="!albumForm.invalid && createAlbum()">
     <label for="album-name" i18n>Nombre del Album:</label>
