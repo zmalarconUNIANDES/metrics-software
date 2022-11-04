@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AlbumService } from '@modules/album/services/album.service';
 import { ArtistService } from '@modules/artist/service/artist.service';
 
-import { HomeRoutingModule } from './home-routing.module';
+import { HomeRoutingModule } from './help-routing.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({

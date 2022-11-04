@@ -41,4 +41,8 @@ export class AlbumService {
     );
     return this.http.post<object>(url, trackInfo);
   }
+
+  addTrack(): void {
+    console.log('Hola addHome');
+  }
 }
